@@ -26,8 +26,8 @@ export function random(n, min = 0, ignore = []) {
 }
 export function randomImage(width, height) {
   const id = random(10000);
-  //return `https://picsum.photos/${width}/${height}/?${id}`;
-  return 'https://plamoya.com/bmz_cache/e/e631027ec8aec3bb07ceedef43a2edfa.image.500x300.jpg';
+  return `https://picsum.photos/${width}/${height}/?${id}`;
+  //return 'https://plamoya.com/bmz_cache/e/e631027ec8aec3bb07ceedef43a2edfa.image.500x300.jpg';
 }
 export function generatePieces(maxX, maxY, size, number) {
   const pieces = new Array(number);
@@ -44,6 +44,7 @@ export function generatePieces(maxX, maxY, size, number) {
     );
     pieces[i] = {
       id: i,
+      score: random(1000),
       x: random(maxX - size, 0, ignore.x),
       y: random(maxY - size, 0, ignore.y),
       size
