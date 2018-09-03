@@ -1,0 +1,29 @@
+.score-board {
+  background-image: url(/assets/images/background.png);
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-card {
+    background: #fff4d0;
+    height: auto;
+    width: 11rem;
+    border: 4px solid #ffdf7f;
+    border-radius: 1rem 1rem;
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+}
+.score-card .label {
+    color: #a9ad9f;
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+.score-card .score {
+    color: #000;
+    font-size: 1.7rem;
+    line-height: 2.6rem;
+}
