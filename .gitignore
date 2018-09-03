@@ -1,1 +1,4 @@
 node_modules
+*.cert
+*.key
+.DS_Store

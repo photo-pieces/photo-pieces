@@ -2,7 +2,11 @@
   "name": "picture-pieces",
   "version": "1.0.0",
   "description": "picture-pieces game built in React",
-  "keywords": [],
+  "keywords": [
+    "react-game",
+    "react",
+    "picture-pieces"
+  ],
   "main": "src/index.js",
   "dependencies": {
     "react": "16.4.2",
@@ -11,10 +15,11 @@
     "react-scripts": "1.1.4"
   },
   "devDependencies": {
+    "express": "^4.16.3",
     "serve": "^10.0.0"
   },
   "scripts": {
-    "serve":"serve -s build",
+    "dev": "node server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
