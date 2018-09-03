@@ -1,41 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import GameBoard from './Components/GameBoard';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  History
-} from 'react-router-dom';
-import './styles.css';
+import Home from "./Components/Home";
+import ScoreBoard from "./Components/ScoreBoard";
+
 if (window.location.pathname !== '/') {
   window.location = '/';
-}
-const Home = () => (
-  <div>
-    <ul>
-      <li>
-        <Link to="/new-game">Play</Link>
-      </li>
-    </ul>
-  </div>
-);
-const ScoreBoard = ({ match }) => (
-  <div>
-    <div>
-      {match.params.result === 'w' ? (
-        <div>won, score:{match.params.score}</div>
-      ) : (
-        <div>Lost</div>
-      )}
-    </div>
-    <ul>
-      <li>
-        <Link to="/new-game">Play Again</Link>
-      </li>
-    </ul>
-  </div>
-);
+}else{
 class App extends React.Component {
   render() {
     return (
@@ -50,6 +23,8 @@ class App extends React.Component {
   }
 }
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 
 ReactDOM.render(<App />, rootElement);
+
+}
