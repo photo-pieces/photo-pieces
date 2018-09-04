@@ -16,12 +16,12 @@
   },
   "devDependencies": {
     "express": "^4.16.3",
-    "serve": "^10.0.0"
+    "sw-precache": "^5.2.1"
   },
   "scripts": {
     "dev": "node server.js",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && sw-precache --config=sw-precache-config.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
