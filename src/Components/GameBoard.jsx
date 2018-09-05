@@ -32,7 +32,7 @@ class GameBoard extends React.Component {
         return p;
       })
     });
-    // this.timer = setTimeout(() => this.showScore(calculateStats(this.state)), MAX_TIME);
+    this.timer = setTimeout(() => this.showScore(calculateStats(this.state)), MAX_TIME);
   }
   dropPiece=id=>this.setState(dropPiece(id),() => {
       const stats = calculateStats(this.state);
