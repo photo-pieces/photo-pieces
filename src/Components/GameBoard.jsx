@@ -22,7 +22,7 @@ class GameBoard extends React.Component {
     this.state = {};
   }
   async componentDidMount() {
-    const { pieces, ...rest } = await generateState(500, 300);
+    const { pieces, ...rest } = await generateState(300, 300);
     this.setState({
       ...rest,
       pieces: pieces.map(p => {

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" viewBox="0 0 135 103" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo" fill="#444">
+            <rect id="Rectangle-2" x="68" y="52" width="43" height="28"></rect>
+            <path d="M12,0 L123,0 C129.627417,-1.21743675e-15 135,5.372583 135,12 L135,91 C135,97.627417 129.627417,103 123,103 L12,103 L12,103 C5.372583,103 9.64111764e-15,97.627417 0,91 L0,12 L0,12 C-8.11624501e-16,5.372583 5.372583,1.21743675e-15 12,0 L12,0 Z M15,14 L15,88.8740741 L121,88.8740741 L121,14 L15,14 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>
