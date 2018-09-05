@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "picture-pieces game built in React",
   "keywords": [
-    "react-game",
+    "picture-pieces",
     "react",
-    "picture-pieces"
+    "game",
+    "web-game",
+    "pwa"
   ],
   "main": "src/index.js",
   "dependencies": {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { DragDropContext } from "react-dnd";
-import HTML5Backend from "react-dnd-html5-backend";
 import { default as TouchBackend } from "react-dnd-touch-backend";
 import {
   generateState,
@@ -8,7 +7,7 @@ import {
   dropPiece
 } from "./../utils";
 import Picture from './Picture';
-import Deck from './Deck';
+import Deck, { ItemPreview } from "./Deck";
 import Header from './Header';
 import "../styles/game.css";
 
@@ -52,10 +51,13 @@ class GameBoard extends React.Component {
         <Header {...this.state} maxTime={MAX_TIME} />
         <Picture {...this.state} dropPiece={this.dropPiece} />
         <Deck {...this.state} />
+        <ItemPreview />
       </div>;
   }
   componentWillUnmount() {
     clearTimeout(this.timer);
   }
 }
-export default DragDropContext(HTML5Backend)(GameBoard);
+export default DragDropContext(TouchBackend({ enableMouseEvents: true }))(
+  GameBoard
+);
