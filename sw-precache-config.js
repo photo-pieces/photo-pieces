@@ -22,6 +22,14 @@ module.exports = {
       handler: "fastest"
     },
     {
+      urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+      handler: "fastest"
+    },
+    {
+      urlPattern: /^https:\/\/cdn\.jsdelivr\.net/,
+      handler: "fastest"
+    },
+    {
       urlPattern: /.*?(\/assets\/icons\/)/,
       handler: "fastest"
     }
