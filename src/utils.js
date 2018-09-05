@@ -1,18 +1,4 @@
-export function debounce(func, wait, immediate) {
-  var timeout;
-  return function() {
-    var context = this,
-      args = arguments;
-    var later = function() {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    };
-    var callNow = immediate && !timeout;
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
-  };
-}
+
 export function random(n, min = 0, ignore = []) {
   let number = min + Math.floor(Math.random() * n);
   while (true) {
@@ -91,38 +77,13 @@ export function calculateStats(state) {
   );
   return stats;
 }
-export const onDragLeave = id => state => {
-  const { pieces } = state;
-  return {
-    ...state,
-    pieces: pieces.map(p => {
-      if (p.id === id) {
-        p.highlight = false;
-      }
-      return p;
-    })
-  };
-};
-export const onDragEnter = id => state => {
-  const { pieces } = state;
-  return {
-    ...state,
-    pieces: pieces.map(p => {
-      if (p.id === id) {
-        p.highlight = true;
-      }
-      return p;
-    })
-  };
-};
 export const dropPiece = id => state => {
-  const { pieces, currentPiece } = state;
+  const { pieces } = state;
   return {
     ...state,
     pieces: pieces.map(p => {
       if (p.id === id) {
-        p.highlight = false;
-        p.matched = currentPiece === id;
+        p.matched = true;
       }
       return p;
     })

@@ -16,7 +16,7 @@ class App extends React.Component {
         <div>
           <Route exact path="/" component={Home} />
           <Route path="/new-game" component={GameBoard} />
-          <Route path="/score/:result/:score" component={ScoreBoard} />
+          <Route path="/score" component={ScoreBoard} />
         </div>
       </Router>
     );
