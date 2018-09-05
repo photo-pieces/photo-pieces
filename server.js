@@ -2,9 +2,11 @@ var express = require("express");
 var fs = require("fs");
 var https = require("https");
 var app = express();
-
+var path = require("path");
 app.use(express.static("build"));
-
+app.get('*', function (request, response) {
+  response.sendFile(path.resolve(__dirname, 'build/index.html'));
+});
 https
   .createServer(
     {
