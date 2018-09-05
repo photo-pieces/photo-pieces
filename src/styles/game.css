@@ -57,7 +57,7 @@
 }
 .deck .piece {
   cursor: pointer;
-  margin: 0.7rem;
+  margin: 0.5rem;
   color: #fff;
   display: inline-flex;
   align-items: center;
