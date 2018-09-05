@@ -10,15 +10,16 @@ export function random(n, min = 0, ignore = []) {
   }
   return number;
 }
+let imageId = 5;
+  
 export function randomImage(width, height) {
-  const id = random(10000);
-  const src = `https://picsum.photos/${width}/${height}/?${id}`;
-  //return 'https://plamoya.com/bmz_cache/e/e631027ec8aec3bb07ceedef43a2edfa.image.500x300.jpg';
+  const src = `https://picsum.photos/${width}/${height}/?${imageId}`;
   return new Promise((resolve, reject) => {
     const image = new Image();
     image.src = src;
     image.onload = function() {
       resolve(src);
+      imageId = imageId + 1;  
     };
     image.onerror = function() {
       reject(src);

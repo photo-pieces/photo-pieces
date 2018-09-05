@@ -31,23 +31,19 @@ class GameBoard extends React.Component {
         return p;
       })
     });
-    this.timer = setTimeout(() => {
-      const stats = calculateStats(this.state);
-      this.props.history.push("/score", {
-        result: stats.result,
-        score: stats.score
-      });
-    }, MAX_TIME);
+    this.timer = setTimeout(() => this.showScore(calculateStats(this.state)), MAX_TIME);
   }
   dropPiece=id=>this.setState(dropPiece(id),() => {
       const stats = calculateStats(this.state);
       if (stats.result === "w") {
-        this.props.history.push("/score", {
-          result: "w",
-          score: stats.score
-        });
+        this.showScore(stats);
       }})
-  
+  showScore(stats){
+    this.props.history.push("/score", {
+      result: "w",
+      score: stats.score
+    });
+  }
   render() {
     if (!this.state.picture) {
       return null;
