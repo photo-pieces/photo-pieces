@@ -29,16 +29,17 @@ class Piece extends React.Component {
       backgroundImage: `url(${picture})`,
       width: piece.size,
       height: piece.size,
-      border: "2px solid black",
+      border:`2px solid ${isDragging?'white':'#444'}`,
       backgroundPosition: `-${piece.x}px -${piece.y}px`
     };
 
     styles = currentOffset ? getItemStyles(currentOffset, styles) : styles;
-    let content = (
-      <span className="piece" style={styles} key={piece.id}>
-        {piece.score}
-      </span>
-    );
+    const text = piece.matched ? <span>
+        ✔
+      </span> : <span>{piece.score}</span>;
+    let content = <span className="piece" style={styles} key={piece.id}>
+        {text}
+      </span>;
     content = connectDragSource(content);
     content = connectDragPreview(content);
     return content;
@@ -62,7 +63,8 @@ function getItemStyles(currentOffset, styles) {
 
   return {
     ...styles,
-    position: "absolute",
+    position: "fixed",
+    top:"0px",
     pointerEvents: "none",
     transform: transform,
     WebkitTransform: transform

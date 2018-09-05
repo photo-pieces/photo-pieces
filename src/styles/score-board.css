@@ -1,5 +1,6 @@
 .score-board {
-  background-image: url(/assets/images/background.png);
+  /* background-image: url(/assets/images/background.png); */
+  background-color: #20273E;  
   height: 100vh;
   flex-direction: column;
   display: flex;
@@ -8,22 +9,22 @@
 }
 
 .score-card {
-    background: #fff4d0;
+    background: #fff;
     height: auto;
-    width: 11rem;
-    border: 4px solid #ffdf7f;
-    border-radius: 1rem 1rem;
+    width: 157px;
     text-align: center;
-    padding: 1rem;
-    margin: 1rem;
+    margin-bottom: 200px;
+    padding: 30px 20px;
+    border-radius: 4px;
 }
 .score-card .label {
-    color: #a9ad9f;
-    font-size: 1.25rem;
-    line-height: 2rem;
+    color: #4984c5;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 .score-card .score {
-    color: #000;
-    font-size: 1.7rem;
-    line-height: 2.6rem;
+    color: #20273E;
+    font-size: 28px;
+    margin-top: 5px;
 }

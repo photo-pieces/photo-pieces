@@ -63,12 +63,14 @@ class Picture extends Component {
     };
     return (
       <div className="container picture-wrapper">
-        <div className="picture" style={styles}>
-          {pieces.map((piece, i) => {
-            return (
-              <PieceDropTarget key={i} piece={piece} dropPiece={dropPiece} />
-            );
-          })}
+        <div class="picture-bg">
+          <div className="picture" style={styles}>
+            {pieces.map((piece, i) => {
+              return (
+                <PieceDropTarget key={i} piece={piece} dropPiece={dropPiece} />
+              );
+            })}
+          </div>
         </div>
       </div>
     );

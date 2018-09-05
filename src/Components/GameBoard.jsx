@@ -31,7 +31,7 @@ class GameBoard extends React.Component {
         return p;
       })
     });
-    // this.timer = setTimeout(() => this.showScore(calculateStats(this.state)), MAX_TIME);
+    this.timer = setTimeout(() => this.showScore(calculateStats(this.state)), MAX_TIME);
   }
   dropPiece=id=>this.setState(dropPiece(id),() => {
       const stats = calculateStats(this.state);
@@ -52,7 +52,6 @@ class GameBoard extends React.Component {
         <Header {...this.state} maxTime={MAX_TIME} />
         <Picture {...this.state} dropPiece={this.dropPiece} />
         <Deck {...this.state} />
-
         <ItemPreview />
       </div>;
   }
@@ -60,5 +59,6 @@ class GameBoard extends React.Component {
     clearTimeout(this.timer);
   }
 }
-//export default DragDropContext(HTML5Backend)(GameBoard);
-export default DragDropContext(TouchBackend)(GameBoard);
+export default DragDropContext(TouchBackend({ enableMouseEvents: true }))(
+  GameBoard
+);
