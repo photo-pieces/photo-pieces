@@ -21,7 +21,6 @@ class Piece extends React.Component {
       backgroundImage: `url(${picture})`,
       width: piece.size,
       height: piece.size,
-      color:isDragging?'white':'black',
       border:`2px solid ${isDragging?'white':'black'}`,
       backgroundPosition: `-${piece.x}px -${piece.y}px`
     };  

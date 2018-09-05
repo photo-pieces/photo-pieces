@@ -62,7 +62,7 @@ class Picture extends Component {
       backgroundImage: `url(${picture})`
     };
     return (
-      <div className="container">
+      <div className="container picture-wrapper">
         <div className="picture" style={styles}>
           {pieces.map((piece, i) => {
             return (

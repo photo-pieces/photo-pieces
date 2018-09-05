@@ -1,3 +1,12 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .home {
   background-image: url(/assets/images/background.png);
   height: 100vh;
@@ -6,6 +15,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .btn {
   width: 13rem;
   cursor: pointer;
