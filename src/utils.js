@@ -51,7 +51,7 @@ export function generatePieces(maxX, maxY, size, number) {
 }
 
 export async function generateState(width, height) {
-  const size = 40;
+  const size = 50;
   const count = 5;
   const pieces = generatePieces(width, height, size, count);
   const picture = await randomImage(width, height);

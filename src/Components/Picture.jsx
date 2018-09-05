@@ -61,19 +61,15 @@ class Picture extends Component {
       height: size.height,
       backgroundImage: `url(${picture})`
     };
-    return (
-      <div className="container picture-wrapper">
-        <div class="picture-bg">
+    return <div className="container picture-wrapper">
+        <div className="picture-bg">
           <div className="picture" style={styles}>
             {pieces.map((piece, i) => {
-              return (
-                <PieceDropTarget key={i} piece={piece} dropPiece={dropPiece} />
-              );
+              return <PieceDropTarget key={i} piece={piece} dropPiece={dropPiece} />;
             })}
           </div>
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 

@@ -2,15 +2,20 @@ import React from 'react';
 
 import "../styles/home.css";
 
-export default (props) => (
+export default props => (
   <div className="home">
-    <div class="logo shape1">
-      <div class="shape2"></div>
-      <div class="shape2"></div>
-      <div class="shape2"></div>
-      <div class="shape2 shape3"></div>
+    <div className="logo shape1">
+      <div className="shape2" />
+      <div className="shape2" />
+      <div className="shape2" />
+      <div className="shape2 shape3" />
     </div>
-    <button className="btn" onClick={(e)=>{props.history.push("/new-game");}}>
+    <button
+      className="btn"
+      onClick={e => {
+        props.history.push("/new-game");
+      }}
+    >
       <div>Play</div>
     </button>
   </div>
