@@ -21,7 +21,7 @@ class Piece extends React.Component {
       backgroundImage: `url(${picture})`,
       width: piece.size,
       height: piece.size,
-      border:`2px solid ${isDragging?'white':'black'}`,
+      border:`2px solid ${isDragging?'white':'#444'}`,
       backgroundPosition: `-${piece.x}px -${piece.y}px`
     };  
     return connectDragSource ? connectDragSource(<span className="piece" style={styles} key={piece.id}>
