@@ -6,13 +6,13 @@ import { ItemTypes } from "./../constants";
 
 const pieceTarget = {
   drop(props, monitor) {
-    props.dropPiece(monitor.getItem().id);
+    props.dropPiece(monitor.getItem().piece.id);
   },
   canDrop(props, monitor) {
     if (props.piece.matched) {
       return false;
     }
-    return props.piece.id === monitor.getItem().id;
+    return props.piece.id === monitor.getItem().piece.id;
   }
 };
 function collect(connect, monitor) {

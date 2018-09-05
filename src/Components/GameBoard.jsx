@@ -8,7 +8,7 @@ import {
   dropPiece
 } from "./../utils";
 import Picture from './Picture';
-import Deck from './Deck';
+import Deck, { ItemPreview } from "./Deck";
 import Header from './Header';
 import "../styles/game.css";
 
@@ -22,7 +22,7 @@ class GameBoard extends React.Component {
     this.state = {};
   }
   async componentDidMount() {
-    const { pieces, ...rest } = await generateState(500, 300);
+    const { pieces, ...rest } = await generateState(300, 300);
     this.setState({
       ...rest,
       pieces: pieces.map(p => {
@@ -31,7 +31,7 @@ class GameBoard extends React.Component {
         return p;
       })
     });
-    this.timer = setTimeout(() => this.showScore(calculateStats(this.state)), MAX_TIME);
+    // this.timer = setTimeout(() => this.showScore(calculateStats(this.state)), MAX_TIME);
   }
   dropPiece=id=>this.setState(dropPiece(id),() => {
       const stats = calculateStats(this.state);
@@ -52,10 +52,13 @@ class GameBoard extends React.Component {
         <Header {...this.state} maxTime={MAX_TIME} />
         <Picture {...this.state} dropPiece={this.dropPiece} />
         <Deck {...this.state} />
+
+        <ItemPreview />
       </div>;
   }
   componentWillUnmount() {
     clearTimeout(this.timer);
   }
 }
-export default DragDropContext(HTML5Backend)(GameBoard);
+//export default DragDropContext(HTML5Backend)(GameBoard);
+export default DragDropContext(TouchBackend)(GameBoard);
