@@ -2,14 +2,20 @@
   display: flex;
   justify-content: center;
   padding: 1rem 0;
-  margin: 1rem 0;
-  border: 0.1rem solid;
 }
 .picture {
   position: relative;
   background-size: cover;
+  border: solid 10px #fff;
+  border-radius: 4px;
   /* height: 60vh;
   width: 100%; */
+}
+.picture-wrapper {
+  padding: 30px 0;
+  background: #7474BF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .picture .piece {
   cursor: crosshair;
@@ -37,6 +43,7 @@
 .deck .piece {
   cursor: pointer;
   margin: 1rem;
+  color: #fff;
 }
 .picture .piece:before {
   content: ' ';
@@ -45,7 +52,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(to right, silver 50%, transparent 0%);
+  background-image: linear-gradient(to right, white 50%, transparent 0%);
   background-size: 10px 2px;
   background-repeat: repeat-x;
 
@@ -61,7 +68,7 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(to right, silver 50%, transparent 0%);
+  background-image: linear-gradient(to right, white 50%, transparent 0%);
   background-size: 10px 2px;
   background-repeat: repeat-x;
 
@@ -84,5 +91,66 @@
   }
   100% {
     background-position: 100% top;
+  }
+}
+
+.progress-bar {
+  position: relative;
+  width: 400px;
+  height: 20px;
+  background: #ededed;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar .progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  border-radius: 10px;
+  bottom: 0;
+  transition: all 3s ease;
+  animation-name:  progress-animation;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  width: 0;
+}
+
+@keyframes progress-animation {
+  0% {
+    width: 100%;
+    background: #7474BF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  25% {
+    width: 75%;
+    background: #7474BF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  50% {
+    width: 50%;
+    background: #7474BF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  75% {
+    width: 25%;
+    background: #7474BF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  100% {
+    width: 0%;
+    background: red;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, red, red);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, red, red); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 }
