@@ -1,6 +1,7 @@
 
 module.exports = {
   staticFileGlobs: [
+    "build/index.html",
     "build/static/css/**.css",
     "build/static/js/**.js",
     "build/assets/icons/**.*",
@@ -10,23 +11,22 @@ module.exports = {
   swFilePath: "./build/service-worker.js",
   //   templateFilePath: "./service-worker.tmpl",
   stripPrefix: "build/",
-  handleFetch: false,
   runtimeCaching: [
     {
       urlPattern: /^https:\/\/picsum\.photos/,
-      handler: "fastest"
+      handler: "cacheFirst"
     },
     {
-      urlPattern: /^https:\/\/fonts\.gstatic\.com/,
-      handler: "fastest"
+      urlPattern: /^https:\/\/fonts\.googleapis\.com/,
+      handler: "cacheFirst"
     },
     {
       urlPattern: /^https:\/\/cdn\.jsdelivr\.net/,
-      handler: "fastest"
+      handler: "cacheFirst"
     },
     {
       urlPattern: /.*?(\/assets\/icons\/)/,
-      handler: "fastest"
+      handler: "cacheFirst"
     }
   ]
 };
