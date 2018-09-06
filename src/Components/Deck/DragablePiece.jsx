@@ -1,6 +1,6 @@
 
 import { DragSource } from "react-dnd";
-import { ItemTypes } from "../constants";
+import { ItemTypes } from "../../constants";
 import Piece from "./Piece";
 const pieceSource = {
   beginDrag({ picture, piece }) {

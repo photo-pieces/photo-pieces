@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="theme-color" content="#000000">
 	<!--
       manifest.json provides metadata used when your web app is added to the
@@ -13,7 +14,7 @@
   <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.7/pwacompat.min.js" integrity="sha384-ptgwb3/v69WGur7IwSnWOowVxE7hcRB3DG/EiHdejrw2sFNwUHynFbiRMPxc4hdS"
     crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="%PUBLIC_URL%/assets/icons/icon.png">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800" rel="stylesheet">
+  
 	<!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -30,6 +31,21 @@
 	<noscript>
 		You need to enable JavaScript to run this app.
   </noscript>
+  <script type="text/javascript">
+    WebFontConfig = {
+      google: { families: ['Montserrat'] }
+    };
+    (function () {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })();
+    // ]]>
+  </script>
   <script>
     if ("orientation" in screen) {
       try{

@@ -3,11 +3,11 @@ import { DragDropContext } from "react-dnd";
 import { default as TouchBackend } from "react-dnd-touch-backend";
 import {
   generateState,
-  calculateStats,
+  calculateStats,buildImageCache,
   dropPiece
-} from "./../utils";
-import Picture from './Picture';
-import Deck from "./Deck";
+} from "../utils";
+import Picture from './Picture/Picture';
+import Deck from "./Deck/Deck";
 
 import PiecePreview from "./PiecePreview";
 import Header from './Header';
@@ -33,6 +33,7 @@ class GameBoard extends React.Component {
       })
     });
     this.timer = setTimeout(() => this.showScore(calculateStats(this.state)), MAX_TIME);
+    buildImageCache();
   }
   dropPiece=id=>this.setState(dropPiece(id),() => {
       const stats = calculateStats(this.state);

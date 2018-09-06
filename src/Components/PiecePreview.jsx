@@ -1,6 +1,6 @@
 import React from "react";
 import { DragLayer } from "react-dnd";
-import Piece from "./Piece";
+import Piece from "./Deck/Piece";
 function collectDragLayer(monitor) {
   var item = monitor.getItem();
   return { ...item, currentOffset: monitor.getSourceClientOffset(), isDragging: monitor.isDragging() };
