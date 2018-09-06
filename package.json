@@ -1,9 +1,9 @@
 {
-  "name": "picture-pieces",
+  "name": "photo-pieces",
   "version": "1.0.0",
-  "description": "picture-pieces game built in React",
+  "description": "photo-pieces game built in React",
   "keywords": [
-    "picture-pieces",
+    "photo-pieces",
     "react",
     "game",
     "web-game",
