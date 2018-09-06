@@ -26,6 +26,19 @@ export function randomImage(width, height) {
     };
   });
 }
+export function buildImageCache(){
+  let i = imageId;
+  const len = i+20;
+  for (; i < len; i++) {
+    window.requestIdleCallback((function(id) {
+        return function(){
+          const image = new Image();
+          image.src = `https://picsum.photos/300/300/?${id}`;
+        }
+      })(i));
+  }
+}
+
 export function generatePieces(maxX, maxY, size, number) {
   const pieces = new Array(number);
   for (let i = 0; i < number; i++) {

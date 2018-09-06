@@ -1,30 +1,59 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import GameBoard from './Components/GameBoard';
-import Home from "./Components/Home";
-import ScoreBoard from "./Components/ScoreBoard";
 import registerServiceWorker from "./register-service-worker";
-if (window.location.pathname !== '/') {
-  window.location = '/';
-}else{
-class App extends React.Component {
-  render() {
-    return (
-      <Router>
-        <div>
-          <Route exact path="/" component={Home} />
-          <Route path="/new-game" component={GameBoard} />
-          <Route path="/score" component={ScoreBoard} />
-        </div>
-      </Router>
-    );
+if (window.location.pathname !== "/") {
+  window.location = "/";
+} else {
+  class DynamicComponent extends React.Component {
+    state = {
+      Component: null
+    };
+    async componentWillMount() {
+      try {
+        await this.fetchComponent();
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    async fetchComponent() {
+      const Component = await this.props.loader();
+      this.setState({
+        Component:
+          Component && Component.default
+            ? Component.default
+            : Component });
+    }
+    render() {
+      const { Component } = this.state;
+      return Component ? <Component {...this.props} /> : null;
+    }
   }
-}
 
-const rootElement = document.getElementById("root");
+  function HomeRoute(props) {
+    return <DynamicComponent {...props} loader={() => import(/* webpackPrefetch: true */ "./Components/Home")} />;
+  }
+  function GameBoardRoute(props) {
+    return <DynamicComponent {...props} loader={() => import(/* webpackPrefetch: true */ "./Components/GameBoard")} />;
+  }
+  function ScoreBoardRoute(props) {
+    return <DynamicComponent {...props} loader={() => import(/* webpackPrefetch: true */ "./Components/ScoreBoard")} />;
+  }
+  class App extends React.Component {
+    render() {
+      return <Router>
+          <div>
+            <Route exact path="/" component={HomeRoute} />
+            <Route path="/new-game" component={GameBoardRoute} />
+            <Route path="/score" component={ScoreBoardRoute} />
+          </div>
+        </Router>;
+    }
+  }
 
-ReactDOM.render(<App />, rootElement);
-registerServiceWorker();
+  const rootElement = document.getElementById("root");
+
+  ReactDOM.render(<App />, rootElement);
+  registerServiceWorker();
 }
