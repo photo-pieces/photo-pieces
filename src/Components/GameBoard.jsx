@@ -41,10 +41,7 @@ class GameBoard extends React.Component {
         this.showScore(stats);
       }})
   showScore(stats){
-    this.props.history.push("/score", {
-      result: "w",
-      score: stats.score
-    });
+    this.props.history.push("/score", stats);
   }
   render() {
     if (!this.state.picture) {
