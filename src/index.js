@@ -32,7 +32,7 @@ if (window.location.pathname !== "/") {
   }
 
   function HomeRoute(props) {
-    return <DynamicComponent {...props} loader={() => import(/* webpackPrefetch: true */ "./Components/Home")} />;
+    return <DynamicComponent {...props} loader={() => import(/* webpackPreload: true */ "./Components/Home")} />;
   }
   function GameBoardRoute(props) {
     return <DynamicComponent {...props} loader={() => import(/* webpackPrefetch: true */ "./Components/GameBoard")} />;
