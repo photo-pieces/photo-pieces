@@ -16,8 +16,48 @@ body {
   box-sizing: border-box;
 }
 
+@keyframes SlideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.update{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: 0.3s;
+}
+
+.update.open {
+  transform: translateY(0%);
+}
+
+.update .inner-container {
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #5c7dc2;
+  font-weight: bold;
+  align-items: center;
+}
+
+.update img {
+  width: 18px;
+}
+
 .home {
-  /* background-image: url(/assets/images/background.png); */
   background-color: #20273E;
   height: 100vh;
   flex-direction: column;

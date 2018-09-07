@@ -3,9 +3,9 @@ import { DragDropContext } from "react-dnd";
 import { default as TouchBackend } from "react-dnd-touch-backend";
 import {
   generateState,
-  calculateStats,buildImageCache,
-  dropPiece
+  buildImageCache
 } from "../utils";
+import { calculateStats, dropPiece, saveStats } from "../game";
 import Picture from './Picture/Picture';
 import Deck from "./Deck/Deck";
 
@@ -16,22 +16,24 @@ import "../styles/game.css";
 
 const MAX_TIME = 20000;
 
-
+function Level({value}){
+  return <div>
+      <span>Level</span>
+      <span>{new Array(value).fill("🏅").join(" ")}</span>
+    </div>;
+}
 class GameBoard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
   async componentDidMount() {
-    const { pieces, ...rest } = await generateState(300, 300);
-    this.setState({
-      ...rest,
-      pieces: pieces.map(p => {
-        p.matched = false;
-        p.highlight = false;
-        return p;
-      })
-    });
+    const {levels=[]}=this.props.location.state||{};
+    if (levels.length===0) {
+      saveStats(levels);
+    }
+    const state = await generateState(300, 300, levels.length);
+    this.setState({ ...state});
     this.timer = setTimeout(() => this.showScore(calculateStats(this.state)), MAX_TIME);
     buildImageCache();
   }
@@ -41,14 +43,19 @@ class GameBoard extends React.Component {
         this.showScore(stats);
       }})
   showScore(stats){
-    this.props.history.push("/score", stats);
+    const { levels = [] } = this.props.location.state||{};
+    levels.push(stats);
+    saveStats(levels,true);
+    this.props.history.push("/score", { levels });
   }
   render() {
     if (!this.state.picture) {
       return null;
     }
+    const { levels = [] } = this.props.location.state || {};
     return <div className="App">
         <Header {...this.state} maxTime={MAX_TIME} />
+        <Level value={levels.length + 1}/>
         <Picture {...this.state} dropPiece={this.dropPiece} />
         <Deck {...this.state} />
         <PiecePreview />

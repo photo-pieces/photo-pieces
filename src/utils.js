@@ -55,6 +55,7 @@ export function generatePieces(maxX, maxY, size, number) {
     pieces[i] = {
       id: i,
       score: random(1000),
+      matched:false,
       x: random(maxX - size, 0, ignore.x),
       y: random(maxY - size, 0, ignore.y),
       size
@@ -74,32 +75,3 @@ export async function generateState(width, height) {
     pieces
   };
 }
-export function calculateStats(state) {
-  const stats = state.pieces.reduce(
-    (obj, item) => {
-      if (item.matched === false) {
-        obj.result = "l";
-      } else {
-        obj.score = item.score + obj.score;
-      }
-      return obj;
-    },
-    {
-      result: "w",
-      score: 0
-    }
-  );
-  return stats;
-}
-export const dropPiece = id => state => {
-  const { pieces } = state;
-  return {
-    ...state,
-    pieces: pieces.map(p => {
-      if (p.id === id) {
-        p.matched = true;
-      }
-      return p;
-    })
-  };
-};
