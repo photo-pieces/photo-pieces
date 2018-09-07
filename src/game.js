@@ -13,6 +13,10 @@ export function saveStats(levels,update=false){
     const history={snapshots};
     setItemObject(GAME_HISTORY,history);
 }
+export function getStats(){
+    const {snapshots=[]}=getItemObject(GAME_HISTORY)||{};
+    return {snapshots};
+}
 function getItemObject(key){
     const value=localStorage.getItem(key);
     if(value){
