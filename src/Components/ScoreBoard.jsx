@@ -6,6 +6,9 @@ export default ({ location, history }) => (
     <div className="score-card">
       <div className="label">Score</div>
       <div className="score">{location.state.score}</div>
+      <div className="score">
+        {location.state.result === "w" ? "😁🏆🥇💯" : "💔😔"}
+      </div>
     </div>
     <div
       className="btn"

@@ -26,6 +26,19 @@ export function randomImage(width, height) {
     };
   });
 }
+export function buildImageCache(){
+  let i = imageId;
+  const len = i+20;
+  for (; i < len; i++) {
+    window.requestIdleCallback((function(id) {
+        return function(){
+          const image = new Image();
+          image.src = `https://picsum.photos/300/300/?${id}`;
+        }
+      })(i));
+  }
+}
+
 export function generatePieces(maxX, maxY, size, number) {
   const pieces = new Array(number);
   for (let i = 0; i < number; i++) {
@@ -51,7 +64,7 @@ export function generatePieces(maxX, maxY, size, number) {
 }
 
 export async function generateState(width, height) {
-  const size = 40;
+  const size = 55;
   const count = 5;
   const pieces = generatePieces(width, height, size, count);
   const picture = await randomImage(width, height);

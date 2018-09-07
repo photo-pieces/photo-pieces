@@ -1,25 +1,32 @@
-const images=[];
 
-let imageId = 5;
-const len = imageId+10;
-for (; imageId < len; imageId++) {
-  images.push(`https://picsum.photos/500/300/?${imageId}`);
-}
 module.exports = {
   staticFileGlobs: [
+    "build/index.html",
     "build/static/css/**.css",
     "build/static/js/**.js",
     "build/assets/icons/**.*",
-    "build/assets/images/**.*"   
-  ].concat(images),
+    "build/assets/images/**.*",
+    "https://picsum.photos/300/300/?5"
+  ],
   swFilePath: "./build/service-worker.js",
   //   templateFilePath: "./service-worker.tmpl",
   stripPrefix: "build/",
-  handleFetch: false,
   runtimeCaching: [
     {
       urlPattern: /^https:\/\/picsum\.photos/,
-      handler: "fastest"
+      handler: "cacheFirst"
+    },
+    {
+      urlPattern: /^https:\/\/fonts\.googleapis\.com/,
+      handler: "cacheFirst"
+    },
+    {
+      urlPattern: /^https:\/\/cdn\.jsdelivr\.net/,
+      handler: "cacheFirst"
+    },
+    {
+      urlPattern: /.*?(\/assets\/icons\/)/,
+      handler: "cacheFirst"
     }
   ]
 };

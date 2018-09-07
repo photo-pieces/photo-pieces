@@ -1,11 +1,13 @@
 {
-  "name": "picture-pieces",
+  "name": "photo-pieces",
   "version": "1.0.0",
-  "description": "picture-pieces game built in React",
+  "description": "photo-pieces game built in React",
   "keywords": [
-    "react-game",
+    "photo-pieces",
     "react",
-    "picture-pieces"
+    "game",
+    "web-game",
+    "pwa"
   ],
   "main": "src/index.js",
   "dependencies": {
@@ -15,7 +17,7 @@
     "react-dnd-touch-backend": "^0.5.1",
     "react-dom": "16.4.2",
     "react-router-dom": "4.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.5"
   },
   "devDependencies": {
     "express": "^4.16.3",

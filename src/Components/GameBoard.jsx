@@ -1,14 +1,15 @@
 import React from 'react';
 import { DragDropContext } from "react-dnd";
-import HTML5Backend from "react-dnd-html5-backend";
 import { default as TouchBackend } from "react-dnd-touch-backend";
 import {
   generateState,
-  calculateStats,
+  calculateStats,buildImageCache,
   dropPiece
-} from "./../utils";
-import Picture from './Picture';
-import Deck from './Deck';
+} from "../utils";
+import Picture from './Picture/Picture';
+import Deck from "./Deck/Deck";
+
+import PiecePreview from "./PiecePreview";
 import Header from './Header';
 import "../styles/game.css";
 
@@ -32,6 +33,7 @@ class GameBoard extends React.Component {
       })
     });
     this.timer = setTimeout(() => this.showScore(calculateStats(this.state)), MAX_TIME);
+    buildImageCache();
   }
   dropPiece=id=>this.setState(dropPiece(id),() => {
       const stats = calculateStats(this.state);
@@ -39,10 +41,7 @@ class GameBoard extends React.Component {
         this.showScore(stats);
       }})
   showScore(stats){
-    this.props.history.push("/score", {
-      result: "w",
-      score: stats.score
-    });
+    this.props.history.push("/score", stats);
   }
   render() {
     if (!this.state.picture) {
@@ -52,10 +51,13 @@ class GameBoard extends React.Component {
         <Header {...this.state} maxTime={MAX_TIME} />
         <Picture {...this.state} dropPiece={this.dropPiece} />
         <Deck {...this.state} />
+        <PiecePreview />
       </div>;
   }
   componentWillUnmount() {
     clearTimeout(this.timer);
   }
 }
-export default DragDropContext(HTML5Backend)(GameBoard);
+export default DragDropContext(TouchBackend({ enableMouseEvents: true }))(
+  GameBoard
+);
