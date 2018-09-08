@@ -1,4 +1,39 @@
-const GAME_HISTORY="game-history";
+
+import { GAME_CONFIGURATON, GAME_HISTORY } from "./constants";
+import { random, randomImage } from "./utils";
+
+function generatePieces(maxX, maxY, size, number) {
+  const pieces = new Array(number);
+  for (let i = 0; i < number; i++) {
+    const ignore = pieces.reduce(
+      (result, item) => {
+        if (item) {
+          result.x.push(item.x + size);
+          result.y.push(item.y + size);
+        }
+        return result;
+      },
+      { x: [], y: [] }
+    );
+    pieces[i] = {
+      id: i,
+      score: random(1000),
+      matched: false,
+      x: random(maxX - size, 0, ignore.x),
+      y: random(maxY - size, 0, ignore.y),
+      size
+    };
+  }
+  return pieces;
+}
+
+export async function generateState(width, height, level) {
+  const { interval = 10, size = 55, pieces = 5 } =
+    GAME_CONFIGURATON.levels[level] || {};
+  const piecesObj = generatePieces(width, height, size, pieces);
+  const picture = await randomImage(width, height);
+  return { size: { width, height }, picture, interval, pieces: piecesObj };
+}
 
 export function saveStats(levels,update=false){
     const {snapshots=[]}=getItemObject(GAME_HISTORY)||{};

@@ -7,13 +7,14 @@
   justify-content: center;
   align-items: center;
 }
-
+.score-card-container{
+    margin-bottom: 200px;   
+}
 .score-card {
     background: #fff;
     height: auto;
     width: 157px;
     text-align: center;
-    margin-bottom: 200px;
     padding: 30px 20px;
     border-radius: 4px;
 }

@@ -2,23 +2,18 @@ import React from 'react';
 import { DragDropContext } from "react-dnd";
 import { default as TouchBackend } from "react-dnd-touch-backend";
 import {
-  generateState,
   buildImageCache
 } from "../utils";
-import { calculateStats, dropPiece, saveStats } from "../game";
+import { generateState, calculateStats, dropPiece, saveStats } from "../game";
 import Picture from './Picture/Picture';
 import Deck from "./Deck/Deck";
 import {GAME_RESULT} from "./../constants";
 import PiecePreview from "./PiecePreview";
 import Header from './Header';
+import Level from "./Level";
+
 import "../styles/game.css";
 
-function Level({value}){
-  return <div>
-      <span>Level</span>
-      <span>{new Array(value).fill("🏅").join(" ")}</span>
-    </div>;
-}
 class GameBoard extends React.Component {
   constructor(props) {
     super(props);
@@ -53,6 +48,7 @@ class GameBoard extends React.Component {
     return <div className="App">
         <Header {...this.state} maxTime={this.state.interval} />
         <Level value={levels.length + 1} />
+
         <Picture {...this.state} dropPiece={this.dropPiece} />
         <Deck {...this.state} />
         <PiecePreview />

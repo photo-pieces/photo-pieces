@@ -1,7 +1,7 @@
 export const ItemTypes = {
   PIECE: "PIECE"
 };
-
+export const GAME_HISTORY = "game-history";
 export const GAME_RESULT = { WON: "w", LOST: "l" };
 
 export const GAME_CONFIGURATON = {

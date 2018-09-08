@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Button } from "./Buttons";
 import "../styles/home.css";
 
 import UpdateBanner from "./UpdateBanner";
@@ -24,11 +25,7 @@ class Home extends React.Component {
           <div className="shape2" />
           <div className="shape2 shape3" />
         </div>
-        <button className="btn" onClick={e => {
-            props.history.push("/new-game");
-          }}>
-          <div>Play</div>
-        </button>
+        <Button onClick={e => props.history.push("/new-game")}>Play</Button>
       </div>;
   }
 }
