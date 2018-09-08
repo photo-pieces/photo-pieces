@@ -1,13 +1,15 @@
 import React from "react";
 import "../styles/score-board.css";
 
+import { GAME_RESULT } from "./../constants";
+
 export default ({ location, history }) => {
   const levels = location.state.levels;
   const total = levels.reduce(function(t, item) {
     return item.score + t;
   }, 0);
   const lastLevel = levels[levels.length - 1];
-  const won = lastLevel.result === "w";
+  const won = lastLevel.result === GAME_RESULT.WON;
   return (
     <div className="score-board">
       <div className="score-card">

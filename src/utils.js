@@ -1,3 +1,4 @@
+import {GAME_CONFIGURATON} from './constants';
 
 export function random(n, min = 0, ignore = []) {
   let number = min + Math.floor(Math.random() * n);
@@ -64,14 +65,9 @@ export function generatePieces(maxX, maxY, size, number) {
   return pieces;
 }
 
-export async function generateState(width, height) {
-  const size = 55;
-  const count = 5;
-  const pieces = generatePieces(width, height, size, count);
+export async function generateState(width, height,level) {
+  const {interval=10, size= 55, pieces= 5}= GAME_CONFIGURATON.levels[level]||{}
+  const piecesObj = generatePieces(width, height, size, pieces);
   const picture = await randomImage(width, height);
-  return {
-    size: { width, height },
-    picture,
-    pieces
-  };
+  return { size: { width, height }, picture, interval, pieces: piecesObj };
 }

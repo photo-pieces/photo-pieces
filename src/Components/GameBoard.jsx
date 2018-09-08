@@ -8,13 +8,10 @@ import {
 import { calculateStats, dropPiece, saveStats } from "../game";
 import Picture from './Picture/Picture';
 import Deck from "./Deck/Deck";
-
+import {GAME_RESULT} from "./../constants";
 import PiecePreview from "./PiecePreview";
 import Header from './Header';
 import "../styles/game.css";
-
-
-const MAX_TIME = 20000;
 
 function Level({value}){
   return <div>
@@ -34,12 +31,12 @@ class GameBoard extends React.Component {
     }
     const state = await generateState(300, 300, levels.length);
     this.setState({ ...state});
-    this.timer = setTimeout(() => this.showScore(calculateStats(this.state)), MAX_TIME);
+    this.timer = setTimeout(() => this.showScore(calculateStats(this.state)), state.interval*1000);
     buildImageCache();
   }
   dropPiece=id=>this.setState(dropPiece(id),() => {
       const stats = calculateStats(this.state);
-      if (stats.result === "w") {
+      if (stats.result === GAME_RESULT.WON) {
         this.showScore(stats);
       }})
   showScore(stats){
@@ -54,8 +51,8 @@ class GameBoard extends React.Component {
     }
     const { levels = [] } = this.props.location.state || {};
     return <div className="App">
-        <Header {...this.state} maxTime={MAX_TIME} />
-        <Level value={levels.length + 1}/>
+        <Header {...this.state} maxTime={this.state.interval} />
+        <Level value={levels.length + 1} />
         <Picture {...this.state} dropPiece={this.dropPiece} />
         <Deck {...this.state} />
         <PiecePreview />
