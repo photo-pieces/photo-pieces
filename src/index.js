@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import Route from "react-router-dom/es/Route";
+import * as BrowserRouter from "react-router-dom/es/BrowserRouter";
 import ComponentLoader from "./Components/ComponentLoader";
 import * as ServiceWorker from "./service-worker";
+const Router = BrowserRouter.default;
 function HomeRoute(props) {
   return (
     <ComponentLoader
