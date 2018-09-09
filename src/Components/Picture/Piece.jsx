@@ -11,15 +11,13 @@ class Piece extends React.Component {
       left: piece.x
     };
     const cls = ["piece"];
-    if (isOver) {
+    if (!piece.matched && isOver) {
       if (canDrop) {
         cls.push("allowed");
-      }
-      else {
+      } else {
         cls.push("not-allowed");
       }
-    }
-    else if (piece.matched) {
+    } else if (piece.matched) {
       cls.push("matched");
     }
     return connectDropTarget(<span className={cls.join(" ")} style={pieceStyles} key={piece.id}>
