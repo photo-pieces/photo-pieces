@@ -1,0 +1,8 @@
+.level{
+  /* color:white; */
+  margin: 1rem;
+}
+.level .label {
+  margin: 0 0.3rem 0 0;
+  font-weight: 600;
+}

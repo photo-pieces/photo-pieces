@@ -38,68 +38,8 @@ export function buildImageCache(){
       })(i));
   }
 }
-
-export function generatePieces(maxX, maxY, size, number) {
-  const pieces = new Array(number);
-  for (let i = 0; i < number; i++) {
-    const ignore = pieces.reduce(
-      (result, item) => {
-        if (item) {
-          result.x.push(item.x + size);
-          result.y.push(item.y + size);
-        }
-        return result;
-      },
-      { x: [], y: [] }
-    );
-    pieces[i] = {
-      id: i,
-      score: random(1000),
-      x: random(maxX - size, 0, ignore.x),
-      y: random(maxY - size, 0, ignore.y),
-      size
-    };
-  }
-  return pieces;
-}
-
-export async function generateState(width, height) {
-  const size = 55;
-  const count = 5;
-  const pieces = generatePieces(width, height, size, count);
-  const picture = await randomImage(width, height);
-  return {
-    size: { width, height },
-    picture,
-    pieces
-  };
-}
-export function calculateStats(state) {
-  const stats = state.pieces.reduce(
-    (obj, item) => {
-      if (item.matched === false) {
-        obj.result = "l";
-      } else {
-        obj.score = item.score + obj.score;
-      }
-      return obj;
-    },
-    {
-      result: "w",
-      score: 0
-    }
-  );
-  return stats;
-}
-export const dropPiece = id => state => {
-  const { pieces } = state;
-  return {
-    ...state,
-    pieces: pieces.map(p => {
-      if (p.id === id) {
-        p.matched = true;
-      }
-      return p;
-    })
-  };
-};
+export function calculateTotalScore(levels) {
+         return levels.reduce(function(t, item) {
+           return item.score + t;
+         }, 0);
+       }

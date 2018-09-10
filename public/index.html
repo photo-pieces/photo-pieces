@@ -31,7 +31,19 @@
     <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.7/pwacompat.min.js" integrity="sha384-ptgwb3/v69WGur7IwSnWOowVxE7hcRB3DG/EiHdejrw2sFNwUHynFbiRMPxc4hdS"
       crossorigin="anonymous"></script>
 
-  <title>Photo Pieces</title>
+  <title>Play Photo Pieces</title>
+  <meta name="description" content="Play Photo Pieces. Photo Pieces is a fun and engaging free online game. Play it!">
+  <meta property="og:title" content="Play Photo Pieces">
+  <meta property="og:description" content="Play Photo Pieces. Photo Pieces is a fun and engaging free online game. Play it!">
+  <meta property="og:site_name" content="Photo Pieces">
+  <meta property="og:type" content="game">
+  <meta property="og:image" content="%PUBLIC_URL%/assets/images/social-media.png">
+  <meta property="og:url" content="https://photo-pieces.netlify.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Play Photo Pieces">
+  <meta name="twitter:description" content="Play Photo Pieces. Photo Pieces is a fun and engaging free online game. Play it!">
+  <meta name="twitter:url" content="https://photo-pieces.netlify.com/">
+  <meta name="twitter:image:src" content="%PUBLIC_URL%/assets/images/social-media.png">
 </head>
 
 <body>
@@ -39,6 +51,9 @@
     You need to enable JavaScript to run this app.
   </noscript>
   <script>
+      if (window.location.pathname !== "/") {
+        window.location = "/";
+      }
       function noop(){}
       try {
         if ("orientation" in screen) {
@@ -49,7 +64,6 @@
       }
   </script>
   <div id="root"></div>
-  <div id="update" style="display:none"></div>
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
