@@ -36,26 +36,29 @@ export default function History({ history }) {
         </div>
       </div>
       <div className="history-content">
-        {dates.map(date => {
-          return <div className="history-content-container" key={date}>
-              <div className="history-date">{date}</div>
-              <div className="history-result-wrapper">
-                {items[date].map((item, i) => {
-                  return <div className="history-result" key={i}>
-                      <div className="history-time">{item.timeString}</div>
-                      <div className="history-score">
-                        <b className="score">
-                          {calculateTotalScore(item.levels)}
-                        </b> score
-                      </div>
-                      <div className="history-level">
-                        <b className="score">{item.levels.length}</b> Level
-                      </div>
-                    </div>;
-                })}
-              </div>
-            </div>;
-        })}
+        {dates.length>0 ? dates.map(date => {
+            return <div className="history-content-container" key={date}>
+                <div className="history-date">{date}</div>
+                <div className="history-result-wrapper">
+                  {items[date].map((item, i) => {
+                    return <div className="history-result" key={i}>
+                        <div className="history-time">{item.timeString}</div>
+                        <div className="history-score">
+                          <b className="score">
+                            {calculateTotalScore(item.levels)}
+                          </b> score
+                        </div>
+                        <div className="history-level">
+                          <b className="score">{item.levels.length}</b> Level
+                        </div>
+                      </div>;
+                  })}
+                </div>
+              </div>;
+          }) : <div className="placeholder">
+            <img src="/assets/images/sad.svg" alt="sad" />
+            <h3>You haven't played yet !!!</h3>
+          </div>}
       </div>
     </div>;
 }
