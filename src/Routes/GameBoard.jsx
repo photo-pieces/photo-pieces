@@ -38,7 +38,7 @@ class GameBoard extends React.Component {
     const { levels = [] } = this.props.location.state||{};
     levels.push(stats);
     saveStats(levels,true);
-    this.props.history.push("/score", { levels });
+    this.props.history.replace("/score", { levels });
   }
   render() {
     if (!this.state.picture) {

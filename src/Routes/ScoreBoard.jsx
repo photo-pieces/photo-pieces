@@ -11,16 +11,16 @@ export default ({ location, history }) => {
   return <div className="score-board">
       <div className="score-card-container">
         <ScoreCard total={total} levels={levels.length} lastLevel={lastLevel} won={won} />
-        {!won && <Link onClick={e => history.push("/history")}>
+        {!won && <Link onClick={e => history.replace("/history")}>
             View History
           </Link>}
       </div>
       {won ? <div>
-          <Button onClick={e => history.push("/new-game", { levels })}>
+          <Button onClick={e => history.replace("/new-game", { levels })}>
             Next Level
           </Button>
-          <Link onClick={e => history.push("/new-game")}>New Game</Link>
-        </div> : <Button onClick={e => history.push("/new-game")}>
+          <Link onClick={e => history.replace("/new-game")}>New Game</Link>
+        </div> : <Button onClick={e => history.replace("/new-game")}>
           Play Again
         </Button>}
     </div>;

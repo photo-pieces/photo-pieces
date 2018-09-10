@@ -26,11 +26,11 @@ export default function History({ history }) {
   return <div className="history-wrapper">
       <div className="history-header">
         <div className="history-header-container">
-          <div className="history-back-arrow" onClick={e => history.push("/")}>
+          <div className="history-back-arrow" onClick={e => history.replace("/")}>
             ❮
           </div>
           <div className="history-header-title">History</div>
-          <div className="history-delete-icon" onClick={e => clearStats() || history.push("/")}>
+          <div className="history-delete-icon" onClick={e => clearStats() || history.replace("/")}>
             <img src="assets/images/icon-trash.svg" alt="delete-history" />
           </div>
         </div>

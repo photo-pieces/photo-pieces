@@ -25,8 +25,8 @@ class Home extends React.Component {
           <div className="shape2" />
           <div className="shape2 shape3" />
         </div>
-        <Button onClick={e => props.history.push("/new-game")}>Play</Button>
-        <Link onClick={e => props.history.push("/history")}>
+        <Button onClick={e => props.history.replace("/new-game")}>Play</Button>
+        <Link onClick={e => props.history.replace("/history")}>
           View History
         </Link>
       </div>;

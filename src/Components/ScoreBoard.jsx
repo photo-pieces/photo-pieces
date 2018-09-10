@@ -13,7 +13,7 @@ export default ({ location, history }) => (
     <div
       className="btn"
       onClick={e => {
-        history.push("/history");
+        history.replace("/history");
       }}
     >
       <div>History</div>
@@ -21,7 +21,7 @@ export default ({ location, history }) => (
     <div
       className="btn"
       onClick={e => {
-        history.push("/new-game");
+        history.replace("/new-game");
       }}
     >
       <div>Play Again</div>
