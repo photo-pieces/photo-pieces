@@ -62,6 +62,10 @@
       } catch (e) {
         // console.log(e)
       }
+      function preventBehavior(e) {
+          e.preventDefault();
+      };
+      document.addEventListener("touchmove", preventBehavior, { passive: false });
   </script>
   <div id="root"></div>
   <!--
