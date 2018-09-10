@@ -52,6 +52,10 @@ export function getStats(){
     const {snapshots=[]}=getItemObject(GAME_HISTORY)||{};
     return {snapshots};
 }
+export function clearStats(){
+    const history = { snapshots:[] };
+    setItemObject(GAME_HISTORY, history);
+}
 function getItemObject(key){
     const value=localStorage.getItem(key);
     if(value){
