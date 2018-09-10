@@ -13,6 +13,14 @@ export default ({ location, history }) => (
     <div
       className="btn"
       onClick={e => {
+        history.push("/history");
+      }}
+    >
+      <div>History</div>
+    </div>
+    <div
+      className="btn"
+      onClick={e => {
         history.push("/new-game");
       }}
     >

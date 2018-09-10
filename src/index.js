@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import registerServiceWorker from "./register-service-worker";
-if (window.location.pathname !== "/") {
+if (false && window.location.pathname !== "/") {
   window.location = "/";
 } else {
   class DynamicComponent extends React.Component {
@@ -40,6 +40,9 @@ if (window.location.pathname !== "/") {
   function ScoreBoardRoute(props) {
     return <DynamicComponent {...props} loader={() => import(/* webpackPrefetch: true */ "./Components/ScoreBoard")} />;
   }
+  function HistoryRoute(props) {
+    return <DynamicComponent {...props} loader={() => import(/* webpackPrefetch: true */ "./Components/History")} />;
+  }
   class App extends React.Component {
     render() {
       return <Router>
@@ -47,6 +50,7 @@ if (window.location.pathname !== "/") {
             <Route exact path="/" component={HomeRoute} />
             <Route path="/new-game" component={GameBoardRoute} />
             <Route path="/score" component={ScoreBoardRoute} />
+            <Route path="/history" component={HistoryRoute} />
           </div>
         </Router>;
     }
