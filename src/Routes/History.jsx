@@ -37,8 +37,14 @@ export default function History({ history }) {
         </div>
       </div>
       <div className="history-content">
+      {/* <div class="placeholder">
+        <img src="assets/images/sad.svg" alt=""/>
+        <h3>Result not found</h3>
+      </div> */}
         {Object.keys(items).map(key => {
           return (
+
+
             <div className="history-content-container" key={key}>
               <div className="history-date">{key}</div>
               <div className="history-result-wrapper">
@@ -52,7 +58,7 @@ export default function History({ history }) {
                       <div className="history-level">
                         <b className="score">{item.levels.length}</b> Level
                       </div>
-                    </div>
+                    </div>                    
                   );
                 })}
               </div>
