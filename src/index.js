@@ -4,12 +4,14 @@ import Route from "react-router-dom/es/Route";
 import * as BrowserRouter from "react-router-dom/es/BrowserRouter";
 import ComponentLoader from "./Components/ComponentLoader";
 import * as ServiceWorker from "./service-worker";
+import './styles/main.css';
+
 const Router = BrowserRouter.default;
 function HomeRoute(props) {
   return (
     <ComponentLoader
       {...props}
-      loader={() => import(/* webpackPreload: true */ "./Components/Home")}
+      loader={() => import(/* webpackPreload: true */ "./Routes/Home")}
     />
   );
 }
@@ -18,7 +20,7 @@ function GameBoardRoute(props) {
     <ComponentLoader
       {...props}
       loader={() =>
-        import(/* webpackPrefetch: true */ "./Components/GameBoard")
+        import(/* webpackPrefetch: true */ "./Routes/GameBoard")
       }
     />
   );
@@ -28,7 +30,17 @@ function ScoreBoardRoute(props) {
     <ComponentLoader
       {...props}
       loader={() =>
-        import(/* webpackPrefetch: true */ "./Components/ScoreBoard")
+        import(/* webpackPrefetch: true */ "./Routes/ScoreBoard")
+      }
+    />
+  );
+}
+function HistoryRoute(props) {
+  return (
+    <ComponentLoader
+      {...props}
+      loader={() =>
+        import(/* webpackPrefetch: true */ "./Routes/History")
       }
     />
   );
@@ -41,6 +53,7 @@ class App extends React.Component {
           <Route exact path="/" component={HomeRoute} />
           <Route path="/new-game" component={GameBoardRoute} />
           <Route path="/score" component={ScoreBoardRoute} />
+          <Route path="/history" component={HistoryRoute} />
         </div>
       </Router>;
   }

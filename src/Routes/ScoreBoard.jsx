@@ -1,14 +1,13 @@
 import React from "react";
 
-import { Button, Link } from "./Buttons";
+import { Button, Link } from "../Components/Buttons";
 import "../styles/score-board.css";
-import { GAME_RESULT } from "./../constants";
+import { GAME_RESULT } from "../constants";
 
+import { calculateTotalScore } from "../utils";
 export default ({ location, history }) => {
   const levels = location.state.levels;
-  const total = levels.reduce(function(t, item) {
-    return item.score + t;
-  }, 0);
+  const total = calculateTotalScore(levels);
   const lastLevel = levels[levels.length - 1];
   const won = lastLevel.result === GAME_RESULT.WON;
   return <div className="score-board">

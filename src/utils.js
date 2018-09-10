@@ -38,3 +38,8 @@ export function buildImageCache(){
       })(i));
   }
 }
+export function calculateTotalScore(levels) {
+         return levels.reduce(function(t, item) {
+           return item.score + t;
+         }, 0);
+       }

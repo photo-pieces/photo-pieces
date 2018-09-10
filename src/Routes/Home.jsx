@@ -1,10 +1,10 @@
 import React from "react";
 
-import { Button } from "./Buttons";
+import { Button } from "../Components/Buttons";
 import "../styles/home.css";
 
-import UpdateBanner from "./UpdateBanner";
-import * as ServiceWorker from "./../service-worker";
+import UpdateBanner from "../Components/UpdateBanner";
+import * as ServiceWorker from "../service-worker";
 
 class Home extends React.Component {
   state = {

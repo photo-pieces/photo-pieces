@@ -5,12 +5,12 @@ import {
   buildImageCache
 } from "../utils";
 import { generateState, calculateStats, dropPiece, saveStats } from "../game";
-import Picture from './Picture/Picture';
-import Deck from "./Deck/Deck";
-import {GAME_RESULT} from "./../constants";
-import PiecePreview from "./PiecePreview";
-import Header from './Header';
-import Level from "./Level";
+import Picture from '../Components/Picture/Picture';
+import Deck from "../Components/Deck/Deck";
+import {GAME_RESULT} from "../constants";
+import PiecePreview from "../Components/PiecePreview";
+import Header from '../Components/Header';
+import Level from "../Components/Level";
 
 import "../styles/game.css";
 

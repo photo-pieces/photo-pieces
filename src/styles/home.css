@@ -1,21 +1,3 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  user-select: none;
-  overscroll-behavior-y: contain;
-}
-
-body {
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-}
 
 @keyframes SlideDown {
   0% {
@@ -71,40 +53,7 @@ body {
   margin-bottom: 200px;
 }
 
-.btn {
-  cursor: pointer;
-  padding: 0 20px;
-  height: 60px;
-  /* background: #f15922; */
-  background: #7474bf; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to top,
-    #348ac7,
-    #7474bf
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to top,
-    #348ac7,
-    #7474bf
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  border: none;
-  display: flex;
-  width: 300px;
-  color: #fff;
-  font-weight: 600;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  text-transform: uppercase;
-  box-shadow: none;
-  border-radius: 50px;
-}
-.link {
-  text-align: center;
-  cursor: pointer;
-  margin: 1rem;
-  color: white;
-}
+
 .home .shape1 {
   width: 100px;
   height: 80px;
