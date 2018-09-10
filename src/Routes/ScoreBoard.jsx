@@ -13,11 +13,16 @@ export default ({ location, history }) => {
   return <div className="score-board">
       <div className="score-card-container">
         <div className="score-card">
-          <div className="label">Total</div>
-          <div className="score">{total}</div>
-          <div className="label">Last Level</div>
-          <div className="score">{lastLevel.score}</div>
-          <div className="score">{won ? "😁🏆🥇💯" : "💔😔"}</div>
+          <div class="score-card-inner">
+            <div className="label">Total</div>
+            <div className="score">{total}</div>
+          </div>
+          <div class="score-card-inner">
+            <div className="label">Last Level</div>
+            <div className="score">{lastLevel.score}</div>
+          </div>
+
+          <div className="score-result">{won ? "🏆 💯" : "💔 😔"}</div>          
         </div>
         {!won && <Link onClick={e => history.push("/history")}>
           View History

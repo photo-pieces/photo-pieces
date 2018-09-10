@@ -13,10 +13,16 @@
 .score-card {
     background: #fff;
     height: auto;
-    width: 157px;
+    width: 290px;
     text-align: center;
-    padding: 30px 20px;
     border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.score-card .score-card-inner {
+    flex: 1;
+    padding: 30px 20px;
 }
 .score-card .label {
     color: #4984c5;
@@ -28,4 +34,11 @@
     color: #20273E;
     font-size: 28px;
     margin-top: 5px;
+}
+
+.score-card .score-result {
+    font-size: 22px;
+    width: 100%;
+    padding: 10px;
+    background: #f7f7f7;  
 }

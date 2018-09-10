@@ -33,7 +33,7 @@ export default function History({ history }) {
             ❮
           </div>
           <div className="history-header-title">History</div>
-          <div />
+          <div class="history-delete-icon"><img src="assets/images/icon-trash.svg" alt=""/></div>
         </div>
       </div>
       <div className="history-content">
@@ -47,11 +47,10 @@ export default function History({ history }) {
                     <div className="history-result" key={i}>
                       <div className="history-time">{item.timeString}</div>
                       <div className="history-score">
-                        <b className="score">{calculateTotalScore(item.levels)}</b>{" "}
-                        score
+                        <b className="score">{calculateTotalScore(item.levels)}</b> score
                       </div>
                       <div className="history-level">
-                        Level <b className="score">{item.levels.length}</b>
+                        <b className="score">{item.levels.length}</b> Level
                       </div>
                     </div>
                   );

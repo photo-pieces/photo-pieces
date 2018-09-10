@@ -28,9 +28,9 @@
 }
 .link {
   text-decoration: underline;
-    text-align: center;
-    cursor: pointer;
-    margin: 1rem;
-    font-weight: 600;
-    color: white;
+  text-align: center;
+  cursor: pointer;
+  margin: 1rem;
+  font-weight: 600;
+  color: white;
 }
