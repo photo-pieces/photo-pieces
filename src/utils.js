@@ -30,12 +30,17 @@ export function buildImageCache(){
   let i = imageId;
   const len = i+20;
   for (; i < len; i++) {
-    window.requestIdleCallback((function(id) {
-        return function(){
-          const image = new Image();
-          image.src = `https://picsum.photos/300/300/?${id}`;
-        }
-      })(i));
+    const cb = (function(id) {
+      return function() {
+        const image = new Image();
+        image.src = `https://picsum.photos/300/300/?${id}`;
+      };
+    })(i);
+    if (window.requestIdleCallback){
+      window.requestIdleCallback(cb);
+    }else{
+      setTimeout(cb,16)
+    } 
   }
 }
 export function calculateTotalScore(levels) {
