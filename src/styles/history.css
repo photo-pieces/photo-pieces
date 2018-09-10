@@ -5,6 +5,10 @@
   
   .history-header {
     background: #20273E;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
   }
   
   .history-header-container {
@@ -30,6 +34,9 @@
     cursor: pointer;
   }
   
+  .history-content{
+    padding: 62px 0 0 0;
+  }
   .history-content .history-content-container {
     max-width: 600px;
     margin: auto;
