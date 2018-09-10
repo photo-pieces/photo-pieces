@@ -21,6 +21,10 @@ module.exports = {
       handler: "cacheFirst"
     },
     {
+      urlPattern: /^https:\/\/fonts\.gstatic\.com/,
+      handler: "cacheFirst"
+    },
+    {
       urlPattern: /^https:\/\/cdn\.jsdelivr\.net/,
       handler: "cacheFirst"
     },
