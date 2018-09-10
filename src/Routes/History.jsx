@@ -1,5 +1,5 @@
 import React from "react";
-import { getStats } from "../game";
+import { getStats, clearStats } from "../game";
 import "../styles/history.css";
 
 import { calculateTotalScore } from "../utils";
@@ -22,50 +22,43 @@ function groupByDate(snapshots) {
 export default function History({ history }) {
   const { snapshots } = getStats();
   const items = groupByDate(snapshots);
-  return (
-    <div className="history-wrapper">
+  const dates = Object.keys(items);
+  return <div className="history-wrapper">
       <div className="history-header">
         <div className="history-header-container">
-          <div
-            className="history-back-arrow"
-            onClick={e => history.push("/")}
-          >
+          <div className="history-back-arrow" onClick={e => history.push("/")}>
             ❮
           </div>
           <div className="history-header-title">History</div>
-          <div class="history-delete-icon"><img src="assets/images/icon-trash.svg" alt=""/></div>
+          <div className="history-delete-icon" onClick={e => clearStats() || history.push("/")}>
+            <img src="assets/images/icon-trash.svg" alt="delete-history" />
+          </div>
         </div>
       </div>
       <div className="history-content">
-      {/* <div class="placeholder">
-        <img src="assets/images/sad.svg" alt=""/>
-        <h3>Result not found</h3>
-      </div> */}
-        {Object.keys(items).map(key => {
-          return (
-
-
-            <div className="history-content-container" key={key}>
-              <div className="history-date">{key}</div>
-              <div className="history-result-wrapper">
-                {items[key].map((item, i) => {
-                  return (
-                    <div className="history-result" key={i}>
-                      <div className="history-time">{item.timeString}</div>
-                      <div className="history-score">
-                        <b className="score">{calculateTotalScore(item.levels)}</b> score
-                      </div>
-                      <div className="history-level">
-                        <b className="score">{item.levels.length}</b> Level
-                      </div>
-                    </div>                    
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
+        {dates.length>0 ? dates.map(date => {
+            return <div className="history-content-container" key={date}>
+                <div className="history-date">{date}</div>
+                <div className="history-result-wrapper">
+                  {items[date].map((item, i) => {
+                    return <div className="history-result" key={i}>
+                        <div className="history-time">{item.timeString}</div>
+                        <div className="history-score">
+                          <b className="score">
+                            {calculateTotalScore(item.levels)}
+                          </b> score
+                        </div>
+                        <div className="history-level">
+                          <b className="score">{item.levels.length}</b> Level
+                        </div>
+                      </div>;
+                  })}
+                </div>
+              </div>;
+          }) : <div className="placeholder">
+            <img src="/assets/images/sad.svg" alt="sad" />
+            <h3>You haven't played yet !!!</h3>
+          </div>}
       </div>
-    </div>
-  );
+    </div>;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "../Components/Buttons";
+import { Button, Link } from "../Components/Buttons";
 import "../styles/home.css";
 
 import UpdateBanner from "../Components/UpdateBanner";
@@ -26,6 +26,9 @@ class Home extends React.Component {
           <div className="shape2 shape3" />
         </div>
         <Button onClick={e => props.history.push("/new-game")}>Play</Button>
+        <Link onClick={e => props.history.push("/history")}>
+          View History
+        </Link>
       </div>;
   }
 }
