@@ -13,11 +13,11 @@ export default ({ location, history }) => {
   return <div className="score-board">
       <div className="score-card-container">
         <div className="score-card">
-          <div class="score-card-inner">
+          <div className="score-card-inner">
             <div className="label">Total</div>
             <div className="score">{total}</div>
           </div>
-          <div class="score-card-inner">
+          <div className="score-card-inner">
             <div className="label">Last Level</div>
             <div className="score">{lastLevel.score}</div>
           </div>

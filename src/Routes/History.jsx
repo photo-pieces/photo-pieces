@@ -33,7 +33,7 @@ export default function History({ history }) {
             ❮
           </div>
           <div className="history-header-title">History</div>
-          <div class="history-delete-icon"><img src="assets/images/icon-trash.svg" alt=""/></div>
+          <div className="history-delete-icon"><img src="assets/images/icon-trash.svg" alt=""/></div>
         </div>
       </div>
       <div className="history-content">
