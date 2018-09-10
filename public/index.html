@@ -62,10 +62,12 @@
       } catch (e) {
         // console.log(e)
       }
-      function preventBehavior(e) {
-          e.preventDefault();
+      function preventScrollBehavior(e) {
+          if(window.location.pathname!=="/history"){
+            e.preventDefault();
+          }
       };
-      document.addEventListener("touchmove", preventBehavior, { passive: false });
+      document.addEventListener("touchmove", preventScrollBehavior, { passive: false });
   </script>
   <div id="root"></div>
   <!--
