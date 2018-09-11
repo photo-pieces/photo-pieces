@@ -1,6 +1,7 @@
 import React,{ Component } from "react";
 
 
+import { AudioConsumer } from "./../AudioManager";
 import PieceDropTarget from "./PieceDropTarget";
 
 class Picture extends Component {
@@ -15,7 +16,9 @@ class Picture extends Component {
         <div className="picture-bg">
           <div className="picture" style={styles}>
             {pieces.map((piece, i) => {
-              return <PieceDropTarget key={i} piece={piece} dropPiece={dropPiece} />;
+              return <AudioConsumer key={i}>
+                  {({ playDrop }) => <PieceDropTarget key={i} piece={piece} dropPiece={dropPiece} playDrop={playDrop}/>}
+                </AudioConsumer>;
             })}
           </div>
         </div>

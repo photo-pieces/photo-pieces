@@ -2,6 +2,7 @@ import React,{ Component } from "react";
 import Piece from "./Piece";
 import DragablePiece from "./DragablePiece";
 
+import { AudioConsumer } from "./../AudioManager";
 class Deck extends Component {
   render() {
     const { pieces, picture } = this.props;
@@ -10,7 +11,16 @@ class Deck extends Component {
         <div className="deck">
           {pieces.map((piece, i) => {
             const Component = piece.matched ? Piece : DragablePiece;
-            return <Component key={i} picture={picture} piece={piece} />;
+            
+            return <AudioConsumer key={i}>
+                {({ playPick }) => (
+                  <Component
+                    picture={picture}
+                    piece={piece}
+                    playPick={playPick}
+                  />
+                )}
+              </AudioConsumer>; 
           })}
         </div>
       </div>
