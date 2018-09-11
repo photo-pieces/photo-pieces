@@ -6,6 +6,7 @@ import "../styles/home.css";
 import UpdateBanner from "../Components/UpdateBanner";
 import * as ServiceWorker from "../service-worker";
 
+import { AudioConsumer } from "../Components/AudioManager";
 class Home extends React.Component {
   state = {
     showBanner: false
@@ -15,9 +16,14 @@ class Home extends React.Component {
       this.setState({ showBanner: true });
     });
   }
+  clickHandler = silent => {
+    silent(false);
+    this.props.history.replace("/new-game");
+  };
   render() {
     const { props } = this;
-    return <div className="home">
+    return (
+      <div className="home">
         {this.state.showBanner && <UpdateBanner />}
         <div className="logo shape1">
           <div className="shape2" />
@@ -25,11 +31,16 @@ class Home extends React.Component {
           <div className="shape2" />
           <div className="shape2 shape3" />
         </div>
-        <Button onClick={e => props.history.replace("/new-game")}>Play</Button>
+        <AudioConsumer>
+          {({ silent }) => (
+            <Button onClick={e => this.clickHandler(silent)}>Play</Button>
+          )}
+        </AudioConsumer>
         <Link onClick={e => props.history.replace("/history")}>
           View History
         </Link>
-      </div>;
+      </div>
+    );
   }
 }
 export default Home;
