@@ -6,22 +6,30 @@ import { calculateTotalScore } from "../utils";
 function groupByDate(snapshots) {
   const result = {};
   snapshots.reverse();
-  snapshots.forEach(({ time, ...rest }) => {
+  let highest={
+    score:0,level:0
+  }
+  snapshots.forEach(({ time,levels, ...rest }) => {
     const date = new Date(time);
     const dateString = date.toLocaleDateString();
     const timeString = date.toLocaleTimeString();
-    const snapshot = { ...rest, timeString };
-    if (result[dateString]) {
-      result[dateString].push(snapshot);
-    } else {
-      result[dateString] = [snapshot];
+    const totalScore = calculateTotalScore(levels);
+    const level=levels.length;
+    const snapshot = { totalScore, timeString, level  };
+    if (highest.score < totalScore) {
+      highest = { score: totalScore, level: level };
     }
+    if (result[dateString]) {
+        result[dateString].push(snapshot);
+      } else {
+        result[dateString] = [snapshot];
+      }
   });
-  return result;
+  return { highest, items: result };
 }
 export default function History({ history }) {
   const { snapshots } = getStats();
-  const items = groupByDate(snapshots);
+  const { items, highest } = groupByDate(snapshots);
   const dates = Object.keys(items);
   return <div className="history-wrapper">
       <div className="history-header">
@@ -36,7 +44,18 @@ export default function History({ history }) {
         </div>
       </div>
       <div className="history-content">
-        {dates.length>0 ? dates.map(date => {
+        <div className="highest-content-bar">
+          <div>
+            <span>Highest Score : </span>
+            <span>{highest.score}</span>
+          </div>
+          <div>
+            <span>Level : </span>
+            <span>{highest.level}</span>
+          </div>
+        </div>
+
+        {dates.length > 0 ? dates.map(date => {
             return <div className="history-content-container" key={date}>
                 <div className="history-date">{date}</div>
                 <div className="history-result-wrapper">
@@ -44,12 +63,10 @@ export default function History({ history }) {
                     return <div className="history-result" key={i}>
                         <div className="history-time">{item.timeString}</div>
                         <div className="history-score">
-                          <b className="score">
-                            {calculateTotalScore(item.levels)}
-                          </b> score
+                          <b className="score">{item.totalScore}</b> score
                         </div>
                         <div className="history-level">
-                          <b className="score">{item.levels.length}</b> Level
+                          <b className="score">{item.level}</b> Level
                         </div>
                       </div>;
                   })}

@@ -34,13 +34,18 @@ export async function generateState(width, height, level) {
   const picture = await randomImage(width, height);
   return { size: { width, height }, picture, interval, pieces: piecesObj };
 }
-
+function normalizeSnapshots(snapshots) {
+  return snapshots.filter(s => {
+      return s.levels[0] && s.levels[0].score;
+    });
+}
 export function saveStats(levels,update=false){
     let {snapshots=[]}=getItemObject(GAME_HISTORY)||{};
     if(update){
       const last=snapshots[snapshots.length-1];
       last.time = Date.now();
       last.levels=levels;
+      snapshots = normalizeSnapshots(snapshots);
     }else{
       const snapshot = { id: snapshots.length+1, time: Date.now(), levels };
       snapshots.push(snapshot);
@@ -50,6 +55,7 @@ export function saveStats(levels,update=false){
 }
 export function getStats(){
     let {snapshots=[]}=getItemObject(GAME_HISTORY)||{};
+    snapshots = normalizeSnapshots(snapshots);
     return {snapshots};
 }
 export function clearStats(){

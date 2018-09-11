@@ -98,3 +98,15 @@
     text-align: center;
     opacity: 0.2;
   }
+  
+  .highest-content-bar {
+    display: flex;
+    justify-content: space-around;
+    background: #26af26;
+    color: white;
+    padding: 5px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    max-width: 600px;
+    margin: auto;
+  }
