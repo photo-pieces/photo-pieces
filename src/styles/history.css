@@ -38,6 +38,7 @@
 }
 
 .history-content {
+  padding: 87px 0 0 0;
 }
 .history-content .history-content-container {
   max-width: 600px;
@@ -98,13 +99,11 @@
 }
 
 .highest-content-bar {
-  padding: 67px 20px 5px 20px;
-
   display: flex;
   justify-content: space-around;
   background: #26af26;
   color: white;
-
+  padding: 5px 20px;
   font-size: 12px;
   font-weight: 600;
   max-width: 600px;
