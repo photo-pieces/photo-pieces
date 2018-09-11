@@ -42,8 +42,6 @@ export default function History({ history }) {
             <img src="assets/images/icon-trash.svg" alt="delete-history" />
           </div>
         </div>
-      </div>
-      <div className="history-content">
         <div className="highest-content-bar">
           <div>
             <span>Highest Score : </span>
@@ -54,7 +52,9 @@ export default function History({ history }) {
             <span>{highest.level}</span>
           </div>
         </div>
+      </div>
 
+      <div className="history-content">
         {dates.length > 0 ? dates.map(date => {
             return <div className="history-content-container" key={date}>
                 <div className="history-date">{date}</div>
