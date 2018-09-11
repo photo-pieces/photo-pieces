@@ -2,8 +2,10 @@
 import { DragSource } from "react-dnd";
 import { ItemTypes } from "../../constants";
 import Piece from "./Piece";
+
 const pieceSource = {
-  beginDrag({ picture, piece }) {
+  beginDrag({ picture, piece, playPick }) {
+    playPick();
     return { picture, piece };
   }
 };

@@ -6,6 +6,8 @@ import ComponentLoader from "./Components/ComponentLoader";
 import * as ServiceWorker from "./service-worker";
 import './styles/main.css';
 
+import { AudioProvider } from "./Components/AudioManager";
+
 const Router = BrowserRouter.default;
 function HomeRoute(props) {
   return (
@@ -49,12 +51,12 @@ class App extends React.Component {
   
   render() {
     return <Router>
-        <div>
+        <AudioProvider>
           <Route exact path="/" component={HomeRoute} />
           <Route path="/new-game" component={GameBoardRoute} />
           <Route path="/score" component={ScoreBoardRoute} />
           <Route path="/history" component={HistoryRoute} />
-        </div>
+        </AudioProvider>
       </Router>;
   }
 }

@@ -6,6 +6,7 @@ module.exports = {
     "build/static/js/**.js",
     "build/assets/icons/**.*",
     "build/assets/images/**.*",
+    "build/assets/audio/**.*",
     "https://picsum.photos/300/300/?5"
   ],
   swFilePath: "./build/service-worker.js",

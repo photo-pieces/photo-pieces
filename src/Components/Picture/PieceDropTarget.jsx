@@ -3,6 +3,7 @@ import { ItemTypes } from "../../constants";
 import Piece from "./Piece";
 const pieceTarget = {
   drop(props, monitor) {
+    props.playDrop();
     props.dropPiece(monitor.getItem().piece.id);
   },
   canDrop(props, monitor) {
