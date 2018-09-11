@@ -36,7 +36,10 @@ export async function generateState(width, height, level) {
 }
 
 export function saveStats(levels,update=false){
-    const {snapshots=[]}=getItemObject(GAME_HISTORY)||{};
+    let {snapshots=[]}=getItemObject(GAME_HISTORY)||{};
+    snapshots=snapshots.filter(snapshot => {
+      return snapshot.levels[0] && snapshot.levels[0].score;
+    });
     if(update){
       const last=snapshots[snapshots.length-1];
       last.time = Date.now();
@@ -49,7 +52,10 @@ export function saveStats(levels,update=false){
     setItemObject(GAME_HISTORY,history);
 }
 export function getStats(){
-    const {snapshots=[]}=getItemObject(GAME_HISTORY)||{};
+    let {snapshots=[]}=getItemObject(GAME_HISTORY)||{};
+    snapshots = snapshots.filter(snapshot => {
+      return snapshot.levels[0] && snapshot.levels[0].score;
+    });
     return {snapshots};
 }
 export function clearStats(){
