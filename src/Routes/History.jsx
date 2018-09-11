@@ -43,18 +43,17 @@ export default function History({ history }) {
           </div>
         </div>
       </div>
-      <div className="history-content">
-        <div className="highest-content-bar">
-          <div>
-            <span>Highest Score : </span>
-            <span>{highest.score}</span>
-          </div>
-          <div>
-            <span>Level : </span>
-            <span>{highest.level}</span>
-          </div>
+      <div className="highest-content-bar">
+        <div>
+          <span>Highest Score : </span>
+          <span>{highest.score}</span>
         </div>
-
+        <div>
+          <span>Level : </span>
+          <span>{highest.level}</span>
+        </div>
+      </div>
+      <div className="history-content">
         {dates.length > 0 ? dates.map(date => {
             return <div className="history-content-container" key={date}>
                 <div className="history-date">{date}</div>
