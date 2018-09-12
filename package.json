@@ -1,6 +1,6 @@
 {
   "name": "photo-pieces",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "description": "photo-pieces game built in React",
   "keywords": [
     "photo-pieces",
@@ -34,7 +34,7 @@
   },
   "husky": {
     "hooks": {
-      "post-merge": "(git-branch-is master && npm version minor"
+      "post-merge": "git-branch-is master && npm version minor"
     }
   }
 }
