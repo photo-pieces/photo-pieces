@@ -19,11 +19,13 @@
   },
   "devDependencies": {
     "express": "^4.16.3",
+    "git-branch-is": "^2.0.0",
     "react-scripts": "1.1.5",
     "source-map-explorer": "^1.6.0",
     "sw-precache": "^5.2.1"
   },
   "scripts": {
+    "postmerge": "(git-branch-is master && npm version minor || (git-branch-is dev && npm --no-git-tag-version version patch)",
     "dev": "node server.js",
     "start": "HTTPS=true react-scripts start",
     "build": "react-scripts build && sw-precache --config=sw-precache-config.js",
