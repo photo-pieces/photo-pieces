@@ -1,6 +1,8 @@
 import React from 'react';
 
 import "../styles/footer.css";
+import PackageJson from './../../package.json';
+
 export default () => (
   <div className="footer-text">
     We made{" "}
@@ -31,5 +33,7 @@ export default () => (
     >
       @ntshtyagi{" "}
     </a>
+    <br />
+    Version : {PackageJson.version}
   </div>
 );
