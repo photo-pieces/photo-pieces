@@ -25,12 +25,16 @@
     "sw-precache": "^5.2.1"
   },
   "scripts": {
-    "postmerge": "(git-branch-is master && npm version minor",
     "dev": "node server.js",
     "start": "HTTPS=true react-scripts start",
     "build": "react-scripts build && sw-precache --config=sw-precache-config.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer build/static/js/main.*"
+  },
+  "husky": {
+    "hooks": {
+      "post-merge": "(git-branch-is master && npm version minor"
+    }
   }
 }
