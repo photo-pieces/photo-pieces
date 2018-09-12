@@ -1,6 +1,9 @@
+import React from "react";
+
 import { DropTarget } from "react-dnd";
 import { ItemTypes } from "../../constants";
-import Piece from "./Piece";
+import AnimationShell from "./AnimationShell";
+
 const pieceTarget = {
   drop(props, monitor) {
     props.playDrop();
@@ -20,4 +23,25 @@ function collect(connect, monitor) {
     canDrop: monitor.canDrop()
   };
 }
-export default DropTarget(ItemTypes.PIECE, pieceTarget, collect)(Piece);
+class PieceDropTarget extends React.Component {
+  render() {
+    const { connectDropTarget, isOver, canDrop, children, style } = this.props;
+    const className = [];
+    if (isOver) {
+      if (canDrop) {
+        className.push("allowed");
+      } else {
+        className.push("not-allowed");
+      }
+    }
+    return connectDropTarget(
+      <div>
+        {children({ className })}
+        <AnimationShell style={style} />
+      </div>
+    );
+  }
+}
+export default DropTarget(ItemTypes.PIECE, pieceTarget, collect)(
+  PieceDropTarget
+);

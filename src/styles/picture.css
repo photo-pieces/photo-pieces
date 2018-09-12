@@ -1,0 +1,47 @@
+.picture-bg {
+  border-radius: 4px;
+  padding: 10px;
+  background: #fff;
+}
+.picture {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+}
+.picture-wrapper {
+  padding: 30px 10px;
+  background: #7474BF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #348AC7, #7474BF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #348AC7, #7474BF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.picture .piece {
+  cursor: crosshair;
+  background: black;
+  border: 0px dashed;
+  text-align: center;
+  position: absolute;
+}
+.picture .piece-svg {
+  position: absolute;
+}
+.picture .piece-svg .path {
+  animation: dash 10s linear infinite;
+  stroke-dasharray: 20;
+}
+.picture .piece.matched {
+  animation-name: none;
+  background: rgba(255, 255, 255, 0.5);
+}
+.picture .piece.allowed {
+  background: green;
+}
+.picture .piece.not-allowed {
+  background: red;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}

@@ -2,6 +2,7 @@ import React,{ Component } from "react";
 import Piece from "./Piece";
 import DragablePiece from "./DragablePiece";
 
+import "../../styles/deck.css";
 import { AudioConsumer } from "./../AudioManager";
 class Deck extends Component {
   render() {
