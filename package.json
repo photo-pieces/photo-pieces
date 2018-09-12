@@ -34,7 +34,7 @@
   },
   "husky": {
     "hooks": {
-      "post-merge": "(git-branch-is master && npm version minor"
+      "post-merge": "git-branch-is master && npm version minor"
     }
   }
 }
