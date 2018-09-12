@@ -65,14 +65,14 @@ export function clearStats(){
 function getItemObject(key){
     const value=localStorage.getItem(key);
     if(value){
-        return JSON.parse(value);
+        return JSON.parse(atob(value));
     }else{
        return null; 
     }
 }
 function setItemObject(key,value){
     const str=JSON.stringify(value);
-    localStorage.setItem(key,str);
+    localStorage.setItem(key,btoa(str));
 }
 export function calculateStats(state) {
   const stats = state.pieces.reduce(
