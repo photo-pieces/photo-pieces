@@ -92,3 +92,20 @@
     left: 0px;
   }
 }
+
+.footer-text {
+  position: fixed;
+  bottom: 24px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 18px;
+  color: #adadad;
+  font-weight: 600;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.footer-text .footer-link {
+  color: #5c7dc2;
+  margin: 0 5px;
+}
