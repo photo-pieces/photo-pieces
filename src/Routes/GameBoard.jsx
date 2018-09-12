@@ -45,13 +45,13 @@ class GameBoard extends React.Component {
       return null;
     }
     const { levels = [] } = this.props.location.state || {};
+    const key=Math.random()
     return <div className="App">
         <Header {...this.state} maxTime={this.state.interval} />
         <Level value={levels.length + 1} />
-
         <Picture {...this.state} dropPiece={this.dropPiece} />
         <Deck {...this.state} />
-        <PiecePreview />
+        <PiecePreview key={key} />
       </div>;
   }
   componentWillUnmount() {

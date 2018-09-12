@@ -32,6 +32,10 @@ module.exports = {
     {
       urlPattern: /.*?(\/assets\/icons\/)/,
       handler: "cacheFirst"
+    },
+    {
+      urlPattern: /.*?(\/assets\/audio\/)/,
+      handler: "cacheFirst"
     }
   ]
 };
