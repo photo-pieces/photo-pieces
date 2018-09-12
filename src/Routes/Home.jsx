@@ -39,6 +39,13 @@ class Home extends React.Component {
         <Link onClick={e => props.history.replace("/history")}>
           View History
         </Link>
+
+        <div className="footer-text">
+          We made <a className="footer-link" href="">Photo pieces</a> for you crazy millennials. <br />
+          Talk to us :   
+          <a className="footer-link" href="https://twitter.com/kuldeepkeshwar" target="_blank">@kuldeepkeshwar </a>
+          <a className="footer-link" href="https://twitter.com/ntshtyagi" target="_blank">@ntshtyagi </a>
+        </div>
       </div>
     );
   }
