@@ -3,7 +3,7 @@ class ComponentLoader extends React.Component {
   state = {
     Component: null
   };
-  async componentWillMount() {
+  async UNSAFE_componentWillMount() {
     try {
       await this.fetchComponent();
     } catch (e) {
