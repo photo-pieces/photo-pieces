@@ -5,7 +5,7 @@ import PackageJson from './../../package.json';
 
 export default () => (
   <div className="footer-text">
-    We made{" "}
+    We made
     <a
       className="footer-link"
       href="https://photo-pieces.netlify.com/"
@@ -13,7 +13,7 @@ export default () => (
       rel="noopener noreferrer"
     >
       Photo Pieces
-    </a>{" "}
+    </a>
     for you crazy millennials.
     <br />
     Talk to us:
@@ -23,7 +23,7 @@ export default () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      @kuldeepkeshwar{" "}
+      @kuldeepkeshwar
     </a>
     <a
       className="footer-link"
@@ -31,7 +31,7 @@ export default () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      @ntshtyagi{" "}
+      @ntshtyagi
     </a>
     <br />
     Version : {PackageJson.version}

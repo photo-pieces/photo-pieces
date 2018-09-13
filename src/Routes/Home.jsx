@@ -8,6 +8,8 @@ import * as ServiceWorker from "../service-worker";
 
 import { AudioConsumer } from "../Components/AudioManager";
 import Footer from '../Components/Footer';
+import Hamburger from '../Components/Hamburger';
+import Settings from '../Components/Settings';
 class Home extends React.Component {
   state = {
     showBanner: false
@@ -40,7 +42,11 @@ class Home extends React.Component {
         <Link onClick={e => props.history.replace("/history")}>
           View History
         </Link>
+        <div class="hamburger-wrapper">
+          <Hamburger/>
+        </div>
         <Footer/>
+        <Settings/>
       </div>
     );
   }
