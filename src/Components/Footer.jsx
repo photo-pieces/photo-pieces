@@ -12,7 +12,7 @@ export default () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      Photo pieces
+      Photo Pieces
     </a>{" "}
     for you crazy millennials.
     <br />

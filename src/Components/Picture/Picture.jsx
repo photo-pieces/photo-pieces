@@ -3,6 +3,8 @@ import React,{ Component } from "react";
 
 import { AudioConsumer } from "./../AudioManager";
 import PieceDropTarget from "./PieceDropTarget";
+import Piece from "./Piece";
+import "../../styles/picture.css";
 
 class Picture extends Component {
   render() {
@@ -15,9 +17,15 @@ class Picture extends Component {
     return <div className="container picture-wrapper">
         <div className="picture-bg">
           <div className="picture" style={styles}>
-            {pieces.map((piece, i) => {
-              return <AudioConsumer key={i}>
-                  {({ playDrop }) => <PieceDropTarget key={i} piece={piece} dropPiece={dropPiece} playDrop={playDrop}/>}
+            {pieces.map((piece, key) => {
+              return <AudioConsumer key={key}>
+                  {({ playDrop }) => {
+                    const style = { width: piece.size, height: piece.size, top: piece.y, left: piece.x };
+                    const baseProps = { style, piece, dropPiece, playDrop };
+                    return piece.matched ? <Piece {...baseProps} /> : <PieceDropTarget {...{ style,...baseProps }}>
+                        {extra => <Piece {...{ ...baseProps, ...extra }} />}
+                      </PieceDropTarget>;
+                  }}
                 </AudioConsumer>;
             })}
           </div>
