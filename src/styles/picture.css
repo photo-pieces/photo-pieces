@@ -28,6 +28,7 @@
 }
 .picture .piece-svg .path {
   animation: dash 10s linear infinite;
+  animation-direction: reverse;
   stroke-dasharray: 20;
 }
 .picture .piece.matched {
@@ -44,6 +45,6 @@
 
 @keyframes dash {
   to {
-    stroke-dashoffset: -1000;
+    stroke-dashoffset: 1000;
   }
 }
