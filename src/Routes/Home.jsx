@@ -12,7 +12,7 @@ class Home extends React.Component {
   state = {
     showBanner: false
   };
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     ServiceWorker.onUpdate(() => {
       this.setState({ showBanner: true });
     });

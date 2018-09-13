@@ -34,22 +34,26 @@ export default function History({ history }) {
   return <div className="history-wrapper">
       <div className="history-header">
         <div className="history-header-container">
-          <div className="history-back-arrow" onClick={e => history.replace("/")}>
-            ❮
-          </div>
-          <div className="history-header-title">History</div>
-          <div className="history-delete-icon" onClick={e => clearStats() || history.replace("/")}>
-            <img src="assets/images/icon-trash.svg" alt="delete-history" />
+          <div className="history-header-inner">
+            <div className="history-back-arrow" onClick={e => history.replace("/")}>
+              ❮
+            </div>
+            <div className="history-header-title">History</div>
+            <div className="history-delete-icon" onClick={e => clearStats() || history.replace("/")}>
+              <img src="assets/images/icon-trash.svg" alt="delete-history" />
+            </div>
           </div>
         </div>
         <div className="highest-content-bar">
-          <div>
-            <span>Highest Score : </span>
-            <span>{highest.score}</span>
-          </div>
-          <div>
-            <span>Level : </span>
-            <span>{highest.level}</span>
+          <div className="highest-content-bar-inner">
+            <div>
+              <span>Highest Score : </span>
+              <span>{highest.score}</span>
+            </div>
+            <div>
+              <span>Level : </span>
+              <span>{highest.level}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -57,7 +61,9 @@ export default function History({ history }) {
       <div className="history-content">
         {dates.length > 0 ? dates.map(date => {
             return <div className="history-content-container" key={date}>
-                <div className="history-date">{date}</div>
+                <div className="history-date">
+                  <div className="history-date-inner">{date}</div>
+                </div>
                 <div className="history-result-wrapper">
                   {items[date].map((item, i) => {
                     return <div className="history-result" key={i}>
