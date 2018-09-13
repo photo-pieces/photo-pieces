@@ -3,7 +3,6 @@
 }
 
 .history-header {
-  background: #20273e;
   position: fixed;
   left: 0;
   right: 0;
@@ -11,13 +10,17 @@
 }
 
 .history-header-container {
+  background: #20273e;
+}
+
+.history-header-container .history-header-inner {
+  max-width: 600px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 60px;
   color: #fff;
-  max-width: 600px;
-  margin: auto;
 }
 
 .history-header-container .history-delete-icon {
@@ -40,18 +43,19 @@
 .history-content {
   padding: 87px 0 0 0;
 }
-.history-content .history-content-container {
-  max-width: 600px;
-  margin: auto;
-}
 
 .history-content .history-date {
   background: #5684c0;
-  padding: 5px 20px;
   color: #fff;
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 600;
+}
+
+.history-content .history-date .history-date-inner {
+  padding: 5px 20px;
+  max-width: 600px;
+  margin: auto;
 }
 
 .history-content .history-result {
@@ -61,6 +65,8 @@
   justify-content: space-between;
   padding: 15px 20px;
   border-bottom: solid 1px #f3f3f3;
+  max-width: 600px;
+  margin: auto;
 }
 
 .history-content .history-result:last-child {
@@ -99,13 +105,16 @@
 }
 
 .highest-content-bar {
-  display: flex;
-  justify-content: space-around;
   background: #26af26;
   color: white;
-  padding: 5px 20px;
   font-size: 12px;
   font-weight: 600;
+}
+
+.highest-content-bar .highest-content-bar-inner {
+  display: flex;  
+  justify-content: space-around;
+  padding: 5px 20px;
   max-width: 600px;
   margin: auto;
 }
