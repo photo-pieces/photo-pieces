@@ -80,7 +80,7 @@
   "scripts": {
     "dev": "node server.js",
     "start": "HTTPS=true node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.js && npm run build:sw",
     "build:sw": "sw-precache --config=sw-precache-config.js",
     "test": "node scripts/test.js --env=jsdom",
     "analyze": "source-map-explorer build/static/js/main.*"
