@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Link } from "../Components/Buttons";
-import "../styles/score-board.css";
+import "../styles/score-board.scss";
 import { GAME_RESULT } from "../constants";
 import { calculateTotalScore } from "../utils";
 export default ({ location, history }) => {

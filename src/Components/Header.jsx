@@ -1,7 +1,7 @@
 import React from "react";
 
-import "../styles/header.css";
-import "../styles/progress-bar.css";
+import "../styles/header.scss";
+import "../styles/progress-bar.scss";
 
 export default function Header({ maxTime }) {
   const styles = { animationDuration: `${maxTime}s` };

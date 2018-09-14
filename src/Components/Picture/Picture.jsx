@@ -4,7 +4,7 @@ import React,{ Component } from "react";
 import { AudioConsumer } from "./../AudioManager";
 import PieceDropTarget from "./PieceDropTarget";
 import Piece from "./Piece";
-import "../../styles/picture.css";
+import "../../styles/picture.scss";
 
 class Picture extends Component {
   render() {

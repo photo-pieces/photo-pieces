@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Button, Link } from "../Components/Buttons";
-import "../styles/home.css";
+import "../styles/home.scss";
 
 import UpdateBanner from "../Components/UpdateBanner";
 import * as ServiceWorker from "../service-worker";

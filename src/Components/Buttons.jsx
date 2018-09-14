@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "../styles/buttons.css";
+import "../styles/buttons.scss";
 function BaseButton({ className, onClick, children }) {
   return (
     <div className={className} onClick={onClick}>

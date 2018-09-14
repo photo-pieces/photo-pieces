@@ -1,6 +1,6 @@
 import React from "react";
 import { getStats } from "../game";
-import "../styles/history.css";
+import "../styles/history.scss";
 
 import { calculateTotalScore } from "../utils";
 function groupByDate(snapshots) {

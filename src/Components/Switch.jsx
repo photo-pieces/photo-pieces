@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "../styles/switch.css";
+import "../styles/switch.scss";
 
 export default ({ checked = false, onChange }) => (
   <label className="switch">

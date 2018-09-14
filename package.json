@@ -71,6 +71,7 @@
     "express": "^4.16.3",
     "git-branch-is": "^2.0.0",
     "husky": "^0.14.3",
+    "node-sass": "^4.9.3",
     "preload-webpack-plugin": "^3.0.0-beta.2",
     "puppeteer": "^1.8.0",
     "source-map-explorer": "^1.6.0",
@@ -79,7 +80,7 @@
   },
   "scripts": {
     "dev": "node server.js",
-    "postmerge": "git-branch-is master && npm version minor || (git-branch-is next && npm --no-git-tag-version version patch)",
+    "postmerge": "git-branch-is master && npm version minor",
     "start": "HTTPS=true node scripts/start.js",
     "build": "node scripts/build.js && npm run build:sw",
     "build:sw": "sw-precache --config=sw-precache-config.js",
