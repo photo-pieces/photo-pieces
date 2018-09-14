@@ -79,7 +79,7 @@
   },
   "scripts": {
     "dev": "node server.js",
-    "postmerge": "(git-branch-is master && npm version minor || (git-branch-is dev && npm --no-git-tag-version version patch)",
+    "postmerge": "git-branch-is master && npm version minor || (git-branch-is next && npm --no-git-tag-version version patch)",
     "start": "HTTPS=true node scripts/start.js",
     "build": "node scripts/build.js && npm run build:sw",
     "build:sw": "sw-precache --config=sw-precache-config.js",
