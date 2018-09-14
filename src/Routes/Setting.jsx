@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "../styles/settings.css";
+import "../styles/settings.scss";
 import Switch from '../Components/Switch';
 
 import { clearStats } from "../game";

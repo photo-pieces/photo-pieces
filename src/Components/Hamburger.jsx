@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "../styles/hamburger.css";
+import "../styles/hamburger.scss";
 
 export default props => (
   <div {...props}>

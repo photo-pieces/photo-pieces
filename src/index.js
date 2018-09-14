@@ -4,7 +4,7 @@ import Route from "react-router-dom/es/Route";
 import * as BrowserRouter from "react-router-dom/es/BrowserRouter";
 import ComponentLoader from "./Components/ComponentLoader";
 import * as ServiceWorker from "./service-worker";
-import './styles/main.css';
+import './styles/main.scss';
 
 import { AudioProvider } from "./Components/AudioManager";
 

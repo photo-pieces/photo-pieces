@@ -12,7 +12,7 @@ import PiecePreview from "../Components/PiecePreview";
 import Header from '../Components/Header';
 import Level from "../Components/Level";
 
-import "../styles/game.css";
+import "../styles/game.scss";
 
 class GameBoard extends React.Component {
   constructor(props) {
