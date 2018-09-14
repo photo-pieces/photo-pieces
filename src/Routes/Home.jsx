@@ -7,9 +7,8 @@ import UpdateBanner from "../Components/UpdateBanner";
 import * as ServiceWorker from "../service-worker";
 
 import { AudioConsumer } from "../Components/AudioManager";
-import Footer from '../Components/Footer';
-import Hamburger from '../Components/Hamburger';
-import Settings from '../Components/Settings';
+import Footer from "../Components/Footer";
+import Hamburger from "../Components/Hamburger";
 class Home extends React.Component {
   state = {
     showBanner: false
@@ -19,8 +18,9 @@ class Home extends React.Component {
       this.setState({ showBanner: true });
     });
   }
-  clickHandler = silent => {
-    silent(false);
+  clickHandler = (mute, muted) => {
+    mute(!muted);
+    mute(muted);
     this.props.history.replace("/new-game");
   };
   render() {
@@ -35,18 +35,22 @@ class Home extends React.Component {
           <div className="shape2 shape3" />
         </div>
         <AudioConsumer>
-          {({ silent }) => (
-            <Button onClick={e => this.clickHandler(silent)}>Play</Button>
+          {({ methods, muted }) => (
+            <Button onClick={e => this.clickHandler(methods.mute, muted)}>
+              Play
+            </Button>
           )}
         </AudioConsumer>
         <Link onClick={e => props.history.replace("/history")}>
           View History
         </Link>
-        <div class="hamburger-wrapper">
-          <Hamburger/>
+        <div
+          className="hamburger-wrapper"
+          onClick={() => props.history.replace("/setting")}
+        >
+          <Hamburger />
         </div>
-        <Footer/>
-        <Settings/>
+        <Footer />
       </div>
     );
   }

@@ -14,11 +14,11 @@ class Deck extends Component {
             const Component = piece.matched ? Piece : DragablePiece;
             
             return <AudioConsumer key={i}>
-                {({ playPick }) => (
+                {({ methods }) => (
                   <Component
                     picture={picture}
                     piece={piece}
-                    playPick={playPick}
+                    playPick={methods.playPick}
                   />
                 )}
               </AudioConsumer>; 
