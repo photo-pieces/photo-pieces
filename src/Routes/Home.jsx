@@ -25,8 +25,7 @@ class Home extends React.Component {
   };
   render() {
     const { props } = this;
-    return (
-      <div className="home">
+    return <div className="home">
         {this.state.showBanner && <UpdateBanner />}
         <div className="logo shape1">
           <div className="shape2" />
@@ -44,15 +43,11 @@ class Home extends React.Component {
         <Link onClick={e => props.history.replace("/history")}>
           View History
         </Link>
-        <div
-          className="hamburger-wrapper"
-          onClick={() => props.history.replace("/setting")}
-        >
-          <Hamburger />
+        <div className="hamburger-wrapper">
+          <Hamburger onClick={() => props.history.replace("/setting")} />
         </div>
         <Footer />
-      </div>
-    );
+      </div>;
   }
 }
 export default Home;

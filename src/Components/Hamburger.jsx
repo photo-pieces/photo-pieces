@@ -2,12 +2,12 @@ import React from 'react';
 
 import "../styles/hamburger.css";
 
-export default () => (
-    <div>
-        <label className="hamburger">
-            <span className="hamburger-line first"></span>
-            <span className="hamburger-line second"></span>
-            <span className="hamburger-line third"></span>
-        </label>
-    </div>
+export default props => (
+  <div {...props}>
+    <label className="hamburger">
+      <span className="hamburger-line first" />
+      <span className="hamburger-line second" />
+      <span className="hamburger-line third" />
+    </label>
+  </div>
 );
