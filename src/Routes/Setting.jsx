@@ -3,6 +3,7 @@ import React from 'react';
 import "../styles/settings.css";
 import Switch from '../Components/Switch';
 
+import { clearStats } from "../game";
 import { AudioConsumer } from "../Components/AudioManager";
 export default ({ history }) => (
   <AudioConsumer>
@@ -25,6 +26,15 @@ export default ({ history }) => (
                     <img className="settings-list-item-icon" src="/assets/images/icon-volume.svg" alt="volume" />
                     <div className="settings-list-item-title">Volume</div>
                     <Switch checked={!muted} onChange={value => methods.mute(value)} />
+                  </div>
+                </div>
+              </div>
+              <div className="settings-content">
+                <div className="settings-list">
+                  <div className="settings-list-item">
+                    <div style={{ color: "steelblue" }} onClick={e => clearStats() || history.replace("/")} className="settings-list-item-title">
+                      Clear History
+                    </div>
                   </div>
                 </div>
               </div>
