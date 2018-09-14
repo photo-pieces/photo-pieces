@@ -1,6 +1,6 @@
 {
   "name": "photo-pieces",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "photo-pieces game built in React",
   "keywords": [
     "photo-pieces",
@@ -79,16 +79,12 @@
   },
   "scripts": {
     "dev": "node server.js",
+    "postmerge": "git-branch-is master && npm version minor || (git-branch-is next && npm --no-git-tag-version version patch)",
     "start": "HTTPS=true node scripts/start.js",
     "build": "node scripts/build.js && npm run build:sw",
     "build:sw": "sw-precache --config=sw-precache-config.js",
     "test": "node scripts/test.js --env=jsdom",
     "analyze": "source-map-explorer build/static/js/main.*"
-  },
-  "husky": {
-    "hooks": {
-      "post-merge": "git-branch-is master && npm version minor"
-    }
   },
   "browserslist": {
     "development": [

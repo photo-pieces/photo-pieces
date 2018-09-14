@@ -19,11 +19,17 @@ class Picture extends Component {
           <div className="picture" style={styles}>
             {pieces.map((piece, key) => {
               return <AudioConsumer key={key}>
-                  {({ playDrop }) => {
+                  {({ methods }) => {
                     const style = { width: piece.size, height: piece.size, top: piece.y, left: piece.x };
-                    const baseProps = { style, piece, dropPiece, playDrop };
-                    return piece.matched ? <Piece {...baseProps} /> : <PieceDropTarget {...{ style,...baseProps }}>
-                        {extra => <Piece {...{ ...baseProps, ...extra }} />}
+                    const baseProps = { style, piece, dropPiece, playDrop:methods.playDrop };
+                    return piece.matched ? <Piece {...baseProps} /> : <PieceDropTarget
+                        {...{ style, ...baseProps }}
+                      >
+                        {extra => (
+                          <Piece
+                            {...{ ...baseProps, ...extra }}
+                          />
+                        )}
                       </PieceDropTarget>;
                   }}
                 </AudioConsumer>;

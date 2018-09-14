@@ -1,6 +1,7 @@
 
 import { GAME_CONFIGURATON, GAME_HISTORY } from "./constants";
 import { random, randomImage } from "./utils";
+import { getItemObject, setItemObject } from "./storage";
 
 function generatePieces(maxX, maxY, size, number) {
   const pieces = new Array(number);
@@ -61,18 +62,6 @@ export function getStats(){
 export function clearStats(){
     const history = { snapshots:[] };
     setItemObject(GAME_HISTORY, history);
-}
-function getItemObject(key){
-    const value=localStorage.getItem(key);
-    if(value){
-        return JSON.parse(atob(value));
-    }else{
-       return null; 
-    }
-}
-function setItemObject(key,value){
-    const str=JSON.stringify(value);
-    localStorage.setItem(key,btoa(str));
 }
 export function calculateStats(state) {
   const stats = state.pieces.reduce(

@@ -1,5 +1,5 @@
 import React from "react";
-import { getStats, clearStats } from "../game";
+import { getStats } from "../game";
 import "../styles/history.css";
 
 import { calculateTotalScore } from "../utils";
@@ -39,9 +39,9 @@ export default function History({ history }) {
               ❮
             </div>
             <div className="history-header-title">History</div>
-            <div className="history-delete-icon" onClick={e => clearStats() || history.replace("/")}>
+            {/* <div className="history-delete-icon" onClick={e => clearStats() || history.replace("/")}>
               <img src="assets/images/icon-trash.svg" alt="delete-history" />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="highest-content-bar">

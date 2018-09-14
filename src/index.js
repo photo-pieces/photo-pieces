@@ -47,6 +47,15 @@ function HistoryRoute(props) {
     />
   );
 }
+function SettingRoute(props) {
+  return (
+    <ComponentLoader
+      {...props}
+      loader={() => import(/* webpackPrefetch: true */ "./Routes/Setting")}
+    />
+  );
+}
+
 class App extends React.Component {
   
   render() {
@@ -56,6 +65,7 @@ class App extends React.Component {
           <Route path="/new-game" component={GameBoardRoute} />
           <Route path="/score" component={ScoreBoardRoute} />
           <Route path="/history" component={HistoryRoute} />
+          <Route path="/setting" component={SettingRoute} />
         </AudioProvider>
       </Router>;
   }
