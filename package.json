@@ -93,9 +93,9 @@
     "start:app": "HTTPS=true node scripts/start.js",
     "start:lambda": "netlify-lambda serve src/lambda",
     "build": "npm-run-all --parallel build:**",
-    "build:app": "node scripts/build.js && npm run build:sw",
-    "build:sw": "sw-precache --config=sw-precache-config.js",
+    "build:app": "node scripts/build.js && npm run sw",
     "build:lambda": "netlify-lambda build src/lambda",
+    "sw": "sw-precache --config=sw-precache-config.js",
     "test": "node scripts/test.js --env=jsdom",
     "analyze": "source-map-explorer build/static/js/main.*"
   },
