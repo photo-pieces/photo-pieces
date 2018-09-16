@@ -1,7 +1,7 @@
 import React from 'react';
 
 import "../styles/footer.scss";
-import PackageJson from './../../package.json';
+import PackageJson from './../../../package.json';
 
 export default () => (
   <div className="footer-text">
