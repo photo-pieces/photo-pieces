@@ -1,8 +1,8 @@
 import React from "react";
-import { getStats } from "../game";
+import { getStats } from "../utils/game";
 import "../styles/history.scss";
 
-import { calculateTotalScore } from "../utils";
+import { calculateTotalScore } from "../utils/utils";
 function groupByDate(snapshots) {
   const result = {};
   snapshots.reverse();

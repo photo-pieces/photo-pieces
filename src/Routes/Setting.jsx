@@ -3,7 +3,7 @@ import React from 'react';
 import "../styles/settings.scss";
 import Switch from '../Components/Switch';
 
-import { clearStats } from "../game";
+import { clearStats } from "../utils/game";
 import { AudioConsumer } from "../Components/AudioManager";
 export default ({ history }) => (
   <AudioConsumer>

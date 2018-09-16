@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Link } from "../Components/Buttons";
 import "../styles/score-board.scss";
-import { GAME_RESULT } from "../constants";
-import { calculateTotalScore } from "../utils";
+import { GAME_RESULT } from "../utils/constants";
+import { calculateTotalScore } from "../utils/utils";
 export default ({ location, history }) => {
   const {levels=[]} = location.state||{};
   const total = calculateTotalScore(levels);

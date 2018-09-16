@@ -3,11 +3,16 @@ import { DragDropContext } from "react-dnd";
 import { default as TouchBackend } from "react-dnd-touch-backend";
 import {
   buildImageCache
-} from "../utils";
-import { generateState, calculateStats, dropPiece, saveStats } from "../game";
+} from "../utils/utils";
+import {
+  generateState,
+  calculateStats,
+  dropPiece,
+  saveStats
+} from "../utils/game";
 import Picture from '../Components/Picture/Picture';
 import Deck from "../Components/Deck/Deck";
-import {GAME_RESULT} from "../constants";
+import {GAME_RESULT} from "../utils/constants";
 import PiecePreview from "../Components/PiecePreview";
 import Header from '../Components/Header';
 import Level from "../Components/Level";

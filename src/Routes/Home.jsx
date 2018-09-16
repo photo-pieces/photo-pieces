@@ -4,7 +4,7 @@ import { Button, Link } from "../Components/Buttons";
 import "../styles/home.scss";
 
 import UpdateBanner from "../Components/UpdateBanner";
-import * as ServiceWorker from "../service-worker";
+import * as ServiceWorker from "../utils/service-worker";
 
 import { AudioConsumer } from "../Components/AudioManager";
 import Footer from "../Components/Footer";

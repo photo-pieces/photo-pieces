@@ -1,7 +1,7 @@
 import React from "react";
 
 import { DropTarget } from "react-dnd";
-import { ItemTypes } from "../../constants";
+import { ItemTypes } from "../../utils/constants";
 import AnimationShell from "./AnimationShell";
 
 const pieceTarget = {

@@ -1,6 +1,6 @@
 import React from "react";
-import { getItemObject, setItemObject } from "./../storage";
-import {GAME_SETTING,DEFAULT_SETTING} from './../constants';
+import { getItemObject, setItemObject } from "../utils/storage";
+import { GAME_SETTING, DEFAULT_SETTING } from "../utils/constants";
 const { Provider, Consumer } = React.createContext();
 
 function fetchGameSetting(){
