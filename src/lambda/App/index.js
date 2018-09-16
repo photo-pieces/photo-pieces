@@ -18,7 +18,7 @@ export default function expressApp(functionName) {
   const routerBasePath =
     process.env.NODE_ENV === "dev"
       ? `/${functionName}`
-      : `/.netlify/functions/${functionName}/`;
+      : `/.netlify/functions/${functionName}`;
 
   /* define routes */
   router.get("/", (req, res) => {
@@ -39,11 +39,11 @@ export default function expressApp(functionName) {
 					<p>Choose a route:</p>
 
 					<div>
-						<a href='/.netlify/functions/${functionName}/users'>View /users route</a>
+						<a href='${routerBasePath}/users'>View /users route</a>
 					</div>
 
 					<div>
-						<a href='/.netlify/functions/${functionName}/hello'>View /hello route</a>
+						<a href='${routerBasePath}/hello'>View /hello route</a>
 					</div>
 
 					<br/>

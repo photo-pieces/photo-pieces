@@ -89,9 +89,9 @@
   },
   "scripts": {
     "postmerge": "git-branch-is master && npm version minor",
-    "start": "cross-env NODE_ENV=dev npm-run-all --parallel start:app start:lambda",
+    "start": "npm-run-all --parallel start:app start:lambda",
     "start:app": "HTTPS=true node scripts/start.js",
-    "start:lambda": "netlify-lambda serve src/lambda",
+    "start:lambda": "cross-env NODE_ENV=dev netlify-lambda serve src/lambda",
     "build": "npm-run-all --parallel build:**",
     "build:app": "node scripts/build.js && npm run sw",
     "build:lambda": "netlify-lambda build src/lambda",
