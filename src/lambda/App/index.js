@@ -6,6 +6,24 @@ import bodyParser from "body-parser";
 import compression from "compression";
 import customLogger from "./utils/logger";
 
+import React from "react";
+import { renderToString } from "react-dom/server";
+import ScoreBoard from './../../App/Routes/ScoreBoard';
+const Html = ({ body, styles, title }) => {
+  const stylesheet = styles ? `<style>${styles}</style>` : "";
+  return `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>${title}</title>
+        ${stylesheet}
+      </head>
+      <body style="margin:0">
+        <div id="root">${body}</div>
+      </body>
+    </html>
+  `;
+};
 /* My express App */
 export default function expressApp(functionName) {
   const app = express();
@@ -15,75 +33,21 @@ export default function expressApp(functionName) {
   router.use(compression());
 
   // Set router base path for local dev
-  const routerBasePath =
-    process.env.NODE_ENV === "dev"
-      ? `/${functionName}`
-      : `/.netlify/functions/${functionName}`;
-
+  const routerBasePath = process.env.NODE_ENV === "development" ? `/${functionName}` : `/.netlify/functions/${functionName}`;
+  console.log({ routerBasePath,NODE_ENV:process.env.NODE_ENV });
   /* define routes */
-  router.get("/", (req, res) => {
-    const html = `
-			<html>
-				<head>
-					<style>
-						body {
-							padding: 30px;
-						}
-					</style>
-				</head>
-				<body>
-					<h1>Express via '${functionName}' ⊂◉‿◉つ</h1>
-
-					<p>I'm using Express running via a <a href='https://www.netlify.com/docs/functions/' target='_blank'>Netlify Function</a>.</p>
-
-					<p>Choose a route:</p>
-
-					<div>
-						<a href='${routerBasePath}/users'>View /users route</a>
-					</div>
-
-					<div>
-						<a href='${routerBasePath}/hello'>View /hello route</a>
-					</div>
-
-					<br/>
-					<br/>
-
-					<div>
-						<a href='/'>
-							Go back to demo homepage
-						</a>
-					</div>
-
-					<br/>
-					<br/>
-
-					<div>
-						<a href='https://github.com/DavidWells/netlify-functions-express' target='_blank'>
-							See the source code on github
-						</a>
-					</div>
-				</body>
-			</html>
-		`;
+  router.get("/share-card", (req, res) => {
+    const props={ location:{
+        state:{},
+      }, history:{replace:()=>{}} }
+    const reactAppHtml = renderToString(<ScoreBoard {...props} />);
+    console.log(reactAppHtml);
+    const html = Html({ title: "Play Photo Pieces", body: reactAppHtml });
     res.send(html);
   });
 
-  router.get("/users", (req, res) => {
-    res.json({
-      users: [
-        {
-          name: "steve"
-        },
-        {
-          name: "joe"
-        }
-      ]
-    });
-  });
-
-  router.get("/hello/", function(req, res) {
-    res.send("hello world");
+  router.get("/ping", function(req, res) {
+    res.send("pong");
   });
 
   // Attach logger

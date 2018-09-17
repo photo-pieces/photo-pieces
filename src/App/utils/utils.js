@@ -10,7 +10,7 @@ export function random(n, min = 0, ignore = []) {
   }
   return number;
 }
-let imageId = 5;
+let imageId = random(10000);
   
 export function randomImage(width, height) {
   const src = `https://picsum.photos/${width}/${height}/?${imageId}`;

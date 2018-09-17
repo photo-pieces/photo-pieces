@@ -1,6 +1,6 @@
 /* example using https://github.com/dougmoscrop/serverless-http */
 import serverless from "serverless-http";
-import expressApp from "./App";
+import expressApp from "./app";
 
 // We need to define our function name for express routes to set the correct base path
 const functionName = "api";

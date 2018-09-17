@@ -1,5 +1,5 @@
 
-import { GAME_CONFIGURATON, GAME_HISTORY } from "./constants";
+import { GAME_CONFIGURATON, GAME_HISTORY, GAME_RESULT } from "./constants";
 import { random, randomImage } from "./utils";
 import { getItemObject, setItemObject } from "./storage";
 
@@ -63,18 +63,28 @@ export function clearStats(){
     const history = { snapshots:[] };
     setItemObject(GAME_HISTORY, history);
 }
+export function fetchCurrentGame(){
+  const {snapshots}=getStats();
+  const lastSnapshot = snapshots[snapshots.length - 1];
+  let game = { levels: [] };
+  if(lastSnapshot){
+    const {result=GAME_RESULT.LOST} =lastSnapshot.levels[lastSnapshot.levels.length-1]||{};
+    game = result === GAME_RESULT.WON ? { levels: lastSnapshot.levels } : game;
+  }
+  return game;
+}
 export function calculateStats(state) {
   const stats = state.pieces.reduce(
     (obj, item) => {
       if (item.matched === false) {
-        obj.result = "l";
+        obj.result = GAME_RESULT.LOST;
       } else {
         obj.score = item.score + obj.score;
       }
       return obj;
     },
     {
-      result: "w",
+      result: GAME_RESULT.WON,
       score: 0
     }
   );

@@ -9,6 +9,7 @@ import * as ServiceWorker from "../utils/service-worker";
 import { AudioConsumer } from "../Components/AudioManager";
 import Footer from "../Components/Footer";
 import Hamburger from "../Components/Hamburger";
+import {fetchCurrentGame} from '../utils/game';
 class Home extends React.Component {
   state = {
     showBanner: false
@@ -21,7 +22,7 @@ class Home extends React.Component {
   clickHandler = (mute, muted) => {
     mute(!muted);
     mute(muted);
-    this.props.history.replace("/new-game");
+    this.props.history.replace("/new-game", fetchCurrentGame());
   };
   render() {
     const { props } = this;
