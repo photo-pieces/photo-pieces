@@ -1,18 +1,23 @@
-import React from 'react';
+import React from "react";
 
 import "../styles/settings.scss";
-import Switch from '../Components/Switch';
+import Switch from "../Components/Switch";
 
 import { clearStats } from "../utils/game";
 import { AudioConsumer } from "../Components/AudioManager";
+import ReactGA from "../utils/ga";
 export default ({ history }) => (
   <AudioConsumer>
-    {({ methods,muted }) => {
-      return <div className="settings-wrapper">
+    {({ methods, muted }) => {
+      return (
+        <div className="settings-wrapper">
           <div className="settings-header">
             <div className="settings-header-container">
               <div className="settings-header-inner">
-                <div className="settings-back-arrow" onClick={() => history.replace("/")}>
+                <div
+                  className="settings-back-arrow"
+                  onClick={() => history.replace("/")}
+                >
                   ❮
                 </div>
                 <div className="settings-header-title">Settings</div>
@@ -23,16 +28,41 @@ export default ({ history }) => (
               <div className="settings-content">
                 <div className="settings-list">
                   <div className="settings-list-item">
-                    <img className="settings-list-item-icon" src="/assets/images/icon-volume.svg" alt="volume" />
+                    <img
+                      className="settings-list-item-icon"
+                      src="/assets/images/icon-volume.svg"
+                      alt="volume"
+                    />
                     <div className="settings-list-item-title">Volume</div>
-                    <Switch checked={!muted} onChange={value => methods.mute(value)} />
+                    <Switch
+                      checked={!muted}
+                      onChange={value => {
+                        ReactGA.event({
+                          category: "Volume",
+                          action: "Volume Button",
+                          label: "" + !muted
+                        });
+                        methods.mute(value);
+                      }}
+                    />
                   </div>
                 </div>
               </div>
               <div className="settings-content">
                 <div className="settings-list">
                   <div className="settings-list-item">
-                    <div style={{ color: "steelblue" }} onClick={e => clearStats() || history.replace("/")} className="settings-list-item-title">
+                    <div
+                      style={{ color: "steelblue" }}
+                      onClick={e => {
+                        clearStats();
+                        history.replace("/");
+                        ReactGA.event({
+                          category: "Clear History",
+                          action: "Clear History",
+                        });
+                      }}
+                      className="settings-list-item-title"
+                    >
                       Clear History
                     </div>
                   </div>
@@ -40,7 +70,8 @@ export default ({ history }) => (
               </div>
             </div>
           </div>
-        </div>;
+        </div>
+      );
     }}
   </AudioConsumer>
 );
