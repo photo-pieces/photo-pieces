@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/score-board.scss";
-
+import ReactGA from "./../utils/ga";
 export default ({ location, history }) => (
   <div className="score-board">
     <div className="score-card">
@@ -21,6 +21,10 @@ export default ({ location, history }) => (
     <div
       className="btn"
       onClick={e => {
+        ReactGA.event({
+          category: "Navigation",
+          action: "New Game"
+        });
         history.replace("/new-game");
       }}
     >

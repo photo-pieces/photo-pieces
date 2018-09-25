@@ -71,12 +71,13 @@ function getClientEnvironment(publicUrl) {
       {
         // Useful for determining whether we’re running in production mode.
         // Most importantly, it switches React into the correct mode.
-        NODE_ENV: process.env.NODE_ENV || 'development',
+        NODE_ENV: process.env.NODE_ENV || "development",
         // Useful for resolving the correct path to static assets in `public`.
         // For example, <img src={process.env.PUBLIC_URL + '/img/logo.png'} />.
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
         PUBLIC_URL: publicUrl,
+        TRACKING_ID: process.env.TRACKING_ID || undefined
       }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin

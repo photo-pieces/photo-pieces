@@ -1,11 +1,12 @@
 import React from "react";
-
+import ReactGA from './../utils/ga';
 class Banner extends React.Component {
   state = { open: true };
   clickHandler=()=> {
     this.setState({
       open:false
     })
+    ReactGA.event({ category: "Update", action: "Update Banner" });
     setTimeout(function(){
       window.location="/";
     },250);

@@ -9,7 +9,19 @@ import * as ServiceWorker from "../utils/service-worker";
 import { AudioConsumer } from "../Components/AudioManager";
 import Footer from "../Components/Footer";
 import Hamburger from "../Components/Hamburger";
-import {fetchCurrentGame} from '../utils/game';
+import { fetchCurrentGame } from "../utils/game";
+
+function AppLogo() {
+  return (
+    <div className="logo shape1">
+      <div className="shape2" />
+      <div className="shape2" />
+      <div className="shape2" />
+      <div className="shape2 shape3" />
+    </div>
+  );
+}
+
 class Home extends React.Component {
   state = {
     showBanner: false
@@ -26,14 +38,10 @@ class Home extends React.Component {
   };
   render() {
     const { props } = this;
-    return <div className="home">
+    return (
+      <div className="home">
         {this.state.showBanner && <UpdateBanner />}
-        <div className="logo shape1">
-          <div className="shape2" />
-          <div className="shape2" />
-          <div className="shape2" />
-          <div className="shape2 shape3" />
-        </div>
+        <AppLogo />
         <AudioConsumer>
           {({ methods, muted }) => (
             <Button onClick={e => this.clickHandler(methods.mute, muted)}>
@@ -48,7 +56,8 @@ class Home extends React.Component {
           <Hamburger onClick={() => props.history.replace("/setting")} />
         </div>
         <Footer />
-      </div>;
+      </div>
+    );
   }
 }
 export default Home;
