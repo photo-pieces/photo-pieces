@@ -30,6 +30,10 @@ module.exports = {
       handler: "cacheFirst"
     },
     {
+      urlPattern: /^https:\/\/cdn\.polyfill\.io/,
+      handler: "cacheFirst"
+    },
+    {
       urlPattern: /.*?(\/assets\/icons\/)/,
       handler: "cacheFirst"
     },
