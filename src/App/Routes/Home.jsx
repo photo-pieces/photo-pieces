@@ -1,14 +1,14 @@
-import React from "react";
-
-import { Button, Link } from "../Components/Buttons";
 import "../styles/home.scss";
 
-import UpdateBanner from "../Components/UpdateBanner";
 import * as ServiceWorker from "../utils/service-worker";
 
-import { AudioConsumer } from "../Components/AudioManager";
+import { Button, Link } from "../Components/Buttons";
+import React, { useContext, useEffect, useState } from "react";
+
+import { AudioContext } from "../Components/AudioManager";
 import Footer from "../Components/Footer";
 import Hamburger from "../Components/Hamburger";
+import UpdateBanner from "../Components/UpdateBanner";
 import { fetchCurrentGame } from "../utils/game";
 
 function AppLogo() {
@@ -21,43 +21,35 @@ function AppLogo() {
     </div>
   );
 }
-
-class Home extends React.Component {
-  state = {
-    showBanner: false
-  };
-  UNSAFE_componentWillMount() {
+function useHome(history) {
+  const [showBanner, setShowBanner] = useState(false);
+  useEffect(() => {
     ServiceWorker.onUpdate(() => {
-      this.setState({ showBanner: true });
+      setShowBanner(true);
     });
-  }
-  clickHandler = (mute, muted) => {
+  }, []);
+  function clickHandler(mute, muted) {
     mute(!muted);
     mute(muted);
-    this.props.history.replace("/new-game", fetchCurrentGame());
-  };
-  render() {
-    const { props } = this;
-    return (
-      <div className="home">
-        {this.state.showBanner && <UpdateBanner />}
-        <AppLogo />
-        <AudioConsumer>
-          {({ methods, muted }) => (
-            <Button onClick={e => this.clickHandler(methods.mute, muted)}>
-              Play
-            </Button>
-          )}
-        </AudioConsumer>
-        <Link onClick={e => props.history.replace("/history")}>
-          View History
-        </Link>
-        <div className="hamburger-wrapper">
-          <Hamburger onClick={() => props.history.replace("/setting")} />
-        </div>
-        <Footer />
-      </div>
-    );
+    history.replace("/new-game", fetchCurrentGame());
   }
+  return [showBanner, clickHandler];
 }
+function Home({ history }) {
+  const [showBanner, clickHandler] = useHome(history);
+  const { methods, muted } = useContext(AudioContext);
+  return (
+    <div className="home">
+      {showBanner && <UpdateBanner />}
+      <AppLogo />
+      <Button onClick={e => clickHandler(methods.mute, muted)}>Play</Button>
+      <Link onClick={e => history.replace("/history")}>View History</Link>
+      <div className="hamburger-wrapper">
+        <Hamburger onClick={() => history.replace("/setting")} />
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
 export default Home;
