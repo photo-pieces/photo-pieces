@@ -1,56 +1,70 @@
-import React from "react";
+import { DEFAULT_SETTING, GAME_SETTING } from "../utils/constants";
+import React, { useRef, useState } from "react";
 import { getItemObject, setItemObject } from "../utils/storage";
-import { GAME_SETTING, DEFAULT_SETTING } from "../utils/constants";
-const { Provider, Consumer } = React.createContext();
 
-function fetchGameSetting(){
+export const AudioContext = React.createContext(function() {
+  return new Error("used AudioConsumer without a AudioProvider");
+});
+
+function fetchGameSetting() {
   return getItemObject(GAME_SETTING) || DEFAULT_SETTING;
 }
-export class AudioProvider extends React.Component {
-         constructor(props) {
-           super(props);
-           const setting = fetchGameSetting();
-           this.state = { muted: setting.muted, methods: { playPick: this.playPick, playDrop: this.playDrop, mute: this.mute } };
-         }
-         dropEl = React.createRef();
-         pickEl = React.createRef();
+function playSound(el) {
+  return function() {
+    try {
+      el.current
+        .play()
+        .then(r => console.log("played:", r))
+        .catch(r => console.log("error while playing sound:", r));
+    } catch (e) {
+      console.log("error while playing sound:", e);
+    }
+  };
+}
+function useAudio() {
+  const setting = fetchGameSetting();
+  const dropElRef = useRef();
+  const pickElRef = useRef();
+  const playPick = playSound(pickElRef);
+  const playDrop = playSound(dropElRef);
 
-         mute = (muted = true) => {
-           this.setState({ muted },()=>{
-             const setting = fetchGameSetting();
-             setting.muted = muted;
-             setItemObject(GAME_SETTING, setting);
-           });
-         };
-         playPick = () => {
-           try {
-             this.pickEl.current
-               .play()
-               .then(r => console.log(r))
-               .catch(r => console.log(r));
-           } catch (e) {
-             console.log(e);
-           }
-         };
-         playDrop = () => {
-           try {
-             this.dropEl.current
-               .play()
-               .then(r => console.log(r))
-               .catch(r => console.log(r));
-           } catch (e) {
-             console.log(e);
-           }
-         };
-         render() {
-           const props = this.state.muted ? { muted: true } : {};
-           return <div>
-               <audio {...props} ref={this.pickEl} src="/assets/audio/pick.mp3" type="audio/mp3" />
-               <audio {...props} ref={this.dropEl} src="/assets/audio/drop.mp3" type="audio/mp3" />
-               <Provider value={this.state}>
-                 {this.props.children}
-               </Provider>
-             </div>;
-         }
-       }
-export const AudioConsumer = Consumer;
+  const [state, setState] = useState({
+    muted: setting.muted,
+    methods: {
+      playPick: playPick,
+      playDrop: playDrop,
+      mute: mute
+    }
+  });
+  function mute(muted = true) {
+    setState({ ...state, muted });
+    const setting = fetchGameSetting();
+    setting.muted = muted;
+    setItemObject(GAME_SETTING, setting);
+  }
+  return [state, dropElRef, pickElRef];
+}
+export function AudioProvider(props) {
+  const [state, dropElRef, pickElRef] = useAudio();
+
+  const _props = state.muted ? { muted: true } : {};
+  return (
+    <div>
+      <audio
+        {..._props}
+        ref={pickElRef}
+        src="/assets/audio/pick.mp3"
+        type="audio/mp3"
+      />
+      <audio
+        {..._props}
+        ref={dropElRef}
+        src="/assets/audio/drop.mp3"
+        type="audio/mp3"
+      />
+      <AudioContext.Provider value={state}>
+        {props.children}
+      </AudioContext.Provider>
+    </div>
+  );
+}
