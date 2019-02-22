@@ -1,0 +1,10 @@
+
+{
+    "name": "photo-pieces",
+    "version": 2,
+    "alias": ["photo-pieces"],
+    "builds": [{ "src": "api/scoreboard/index.js", "use": "@now/node" }],
+    "github": {
+        "enabled": false
+    }
+  }
