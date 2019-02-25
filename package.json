@@ -1,6 +1,6 @@
 {
   "name": "photo-pieces",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "photo-pieces game built in React",
   "keywords": [
     "photo-pieces",
@@ -24,7 +24,7 @@
     "workbox-cli": "^3.6.3"
   },
   "scripts": {
-    "format":"npx prettier  api/**/*.js* --write & npx prettier  src/**/*.js* --write",
+    "format": "npx prettier  api/**/*.js* --write & npx prettier  src/**/*.js* --write",
     "now-build": "yarn build",
     "now-dev": "npx dev-server -w",
     "postmerge": "git-branch-is master && npm version minor",
