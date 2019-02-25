@@ -1,4 +1,3 @@
-
 export function random(n, min = 0, ignore = []) {
   let number = min + Math.floor(Math.random() * n);
   while (true) {
@@ -11,7 +10,7 @@ export function random(n, min = 0, ignore = []) {
   return number;
 }
 let imageId = 5;
-  
+
 export function randomImage(width, height) {
   const src = `https://picsum.photos/${width}/${height}/?${imageId}`;
   return new Promise((resolve, reject) => {
@@ -19,16 +18,16 @@ export function randomImage(width, height) {
     image.src = src;
     image.onload = function() {
       resolve(src);
-      imageId = imageId + 1;  
+      imageId = imageId + 1;
     };
     image.onerror = function() {
       reject(src);
     };
   });
 }
-export function buildImageCache(){
+export function buildImageCache() {
   let i = imageId;
-  const len = i+20;
+  const len = i + 20;
   for (; i < len; i++) {
     const cb = (function(id) {
       return function() {
@@ -36,15 +35,15 @@ export function buildImageCache(){
         image.src = `https://picsum.photos/300/300/?${id}`;
       };
     })(i);
-    if (window.requestIdleCallback){
+    if (window.requestIdleCallback) {
       window.requestIdleCallback(cb);
-    }else{
-      setTimeout(cb,16)
-    } 
+    } else {
+      setTimeout(cb, 16);
+    }
   }
 }
 export function calculateTotalScore(levels) {
-         return levels.reduce(function(t, item) {
-           return item.score + t;
-         }, 0);
-       }
+  return levels.reduce(function(t, item) {
+    return item.score + t;
+  }, 0);
+}

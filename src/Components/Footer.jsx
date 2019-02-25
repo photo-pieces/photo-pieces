@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
 import "../styles/footer.scss";
-import PackageJson from './../../../package.json';
+import PackageJson from "./../../package.json";
 
 export default () => (
   <div className="footer-text">
     We made
     <a
       className="footer-link"
-      href="https://photo-pieces.netlify.com/"
+      href="https://photo-pieces.now.sh/"
       target="_blank"
       rel="noopener noreferrer"
     >

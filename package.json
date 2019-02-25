@@ -11,23 +11,29 @@
   ],
   "main": "src/index.js",
   "dependencies": {
-    "cross-env": "^5.2.0",
-    "git-branch-is": "^2.1.0",
-    "node-sass": "^4.11.0",
+    "atob": "^2.1.2",
+    "chrome-aws-lambda": "^1.12.0",
+    "puppeteer-core": "^1.12.2",
     "react": "^16.8.3",
     "react-dnd": "^7.0.2",
     "react-dnd-touch-backend": "^0.8.0",
     "react-dom": "^16.8.3",
     "react-ga": "^2.5.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "workbox-cli": "^3.6.3"
   },
   "scripts": {
+    "format":"npx prettier  api/**/*.js* --write & npx prettier  src/**/*.js* --write",
+    "now-build": "yarn build",
+    "now-dev": "npx dev-server -w",
     "postmerge": "git-branch-is master && npm version minor",
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run generate-sw",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "node tools/scripts/deploy.js",
+    "generate-sw": "npx workbox generateSW tools/scripts/workbox-config.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,6 +45,11 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "husky": "^1.3.1"
+    "@iridium/dev-server": "^0.0.2",
+    "cross-env": "^5.2.0",
+    "execa": "^1.0.0",
+    "git-branch-is": "^2.1.0",
+    "husky": "^1.3.1",
+    "node-sass": "^4.11.0"
   }
 }

@@ -5,8 +5,8 @@ export const GAME_HISTORY = "game-stats";
 export const GAME_RESULT = { WON: "w", LOST: "l" };
 export const GAME_SETTING = "game-setting";
 export const DEFAULT_SETTING = {
-  muted:false
-}
+  muted: false
+};
 export const GAME_CONFIGURATON = {
   levels: [
     { interval: 15, size: 100, pieces: 2 },
