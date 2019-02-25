@@ -13,8 +13,7 @@ module.exports = function(req, res) {
     });
     const page = await browser.newPage();
     const url = `https://photo-pieces.now.sh/screenshot?stats=${stats}`;
-    console.log("fetching image for : ", url);
-    await page.goto(url);
+    await page.goto(url, { waitUntil: "networkidle0" });
     const image = await page.screenshot({ fullPage: true });
     res.end(image);
   })();
