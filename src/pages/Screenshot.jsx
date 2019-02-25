@@ -44,7 +44,7 @@ export default ({ location }) => {
     </div>
   );
 };
-
+const svgStyle={height:'1.5rem'};
 function ScoreCard({ total, lastLevelScore, levels, won }) {
   return (
     <div className="score-card">
@@ -58,7 +58,13 @@ function ScoreCard({ total, lastLevelScore, levels, won }) {
         </div>
         <div className="score">{lastLevelScore}</div>
       </div>
-      <div className="score-result">{won ? "🏆 💯" : "💔 😔"}</div>
+      <div className="score-result">{won ? <React.Fragment>
+      <img style={svgStyle} src="/assets/images/trophy.svg" alt="trophy" />
+      <img style={svgStyle} src="/assets/images/hundred-points.svg" alt="hundred-points" />
+        </React.Fragment>: <React.Fragment>
+      <img style={svgStyle} src="/assets/images/broken-heart.svg" alt="broken-heart" />
+      <img style={svgStyle} src="/assets/images/pensive-face.svg" alt="pensive-face" />
+        </React.Fragment>}</div>
     </div>
   );
 }
