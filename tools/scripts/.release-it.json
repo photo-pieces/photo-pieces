@@ -1,0 +1,20 @@
+{
+   "increment": "patch",
+    "non-interactive": true,
+    "requireUpstream": false,
+    "git":{
+      "requireCleanWorkingDir": false
+    },
+    "src": {
+      "tagName": "v%s",
+      "push": true,
+      "commit":true
+    },
+    "github": {
+      "release": false
+    },
+    "npm": {
+      "publish": false
+    }
+  }
+  
