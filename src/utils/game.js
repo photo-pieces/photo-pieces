@@ -1,4 +1,3 @@
-
 import { GAME_CONFIGURATON, GAME_HISTORY, GAME_RESULT } from "./constants";
 import { random, randomImage } from "./utils";
 import { getItemObject, setItemObject } from "./storage";
@@ -37,38 +36,39 @@ export async function generateState(width, height, level) {
 }
 function normalizeSnapshots(snapshots) {
   return snapshots.filter(s => {
-      return s.levels[0] && s.levels[0].score;
-    });
+    return s.levels[0] && s.levels[0].score;
+  });
 }
-export function saveStats(levels,update=false){
-    let {snapshots=[]}=getItemObject(GAME_HISTORY)||{};
-    if(update){
-      const last=snapshots[snapshots.length-1];
-      last.time = Date.now();
-      last.levels=levels;
-      snapshots = normalizeSnapshots(snapshots);
-    }else{
-      const snapshot = { id: snapshots.length+1, time: Date.now(), levels };
-      snapshots.push(snapshot);
-    }
-    const history={snapshots};
-    setItemObject(GAME_HISTORY,history);
-}
-export function getStats(){
-    let {snapshots=[]}=getItemObject(GAME_HISTORY)||{};
+export function saveStats(levels, update = false) {
+  let { snapshots = [] } = getItemObject(GAME_HISTORY) || {};
+  if (update) {
+    const last = snapshots[snapshots.length - 1];
+    last.time = Date.now();
+    last.levels = levels;
     snapshots = normalizeSnapshots(snapshots);
-    return {snapshots};
+  } else {
+    const snapshot = { id: snapshots.length + 1, time: Date.now(), levels };
+    snapshots.push(snapshot);
+  }
+  const history = { snapshots };
+  setItemObject(GAME_HISTORY, history);
 }
-export function clearStats(){
-    const history = { snapshots:[] };
-    setItemObject(GAME_HISTORY, history);
+export function getStats() {
+  let { snapshots = [] } = getItemObject(GAME_HISTORY) || {};
+  snapshots = normalizeSnapshots(snapshots);
+  return { snapshots };
 }
-export function fetchCurrentGame(){
-  const {snapshots}=getStats();
+export function clearStats() {
+  const history = { snapshots: [] };
+  setItemObject(GAME_HISTORY, history);
+}
+export function fetchCurrentGame() {
+  const { snapshots } = getStats();
   const lastSnapshot = snapshots[snapshots.length - 1];
   let game = { levels: [] };
-  if(lastSnapshot){
-    const {result=GAME_RESULT.LOST} =lastSnapshot.levels[lastSnapshot.levels.length-1]||{};
+  if (lastSnapshot) {
+    const { result = GAME_RESULT.LOST } =
+      lastSnapshot.levels[lastSnapshot.levels.length - 1] || {};
     game = result === GAME_RESULT.WON ? { levels: lastSnapshot.levels } : game;
   }
   return game;

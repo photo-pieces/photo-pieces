@@ -3,7 +3,11 @@ import { DragLayer } from "react-dnd";
 import Piece from "./Deck/Piece";
 function collectDragLayer(monitor) {
   var item = monitor.getItem();
-  return { ...item, currentOffset: monitor.getSourceClientOffset(), isDragging: monitor.isDragging() };
+  return {
+    ...item,
+    currentOffset: monitor.getSourceClientOffset(),
+    isDragging: monitor.isDragging()
+  };
 }
 function getItemStyles(currentOffset) {
   if (!currentOffset) {

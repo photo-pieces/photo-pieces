@@ -1,4 +1,3 @@
-
 import { DragSource } from "react-dnd";
 import { ItemTypes } from "../../utils/constants";
 import Piece from "./Piece";

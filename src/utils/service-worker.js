@@ -1,8 +1,8 @@
-let updateCallback=null;
-let updateRequired=false;
-export function onUpdate(callback){
-  updateCallback=callback;
-  if(updateRequired){
+let updateCallback = null;
+let updateRequired = false;
+export function onUpdate(callback) {
+  updateCallback = callback;
+  if (updateRequired) {
     updateCallback();
   }
 }

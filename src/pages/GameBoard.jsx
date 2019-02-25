@@ -22,26 +22,23 @@ function useGameBoard(levels, history) {
   const [state, setState] = useState({});
   let timer = null;
 
-  useEffect(
-    () => {
-      if (levels.length === 0) {
-        saveStats(levels);
-      }
-      generateState(300, 300, levels.length).then(state => {
-        setState({ ...state });
-        timer = setTimeout(
-          () => showScore(calculateStats(state)),
-          state.interval * 1000
-        );
-        buildImageCache();
-      });
+  useEffect(() => {
+    if (levels.length === 0) {
+      saveStats(levels);
+    }
+    generateState(300, 300, levels.length).then(state => {
+      setState({ ...state });
+      timer = setTimeout(
+        () => showScore(calculateStats(state)),
+        state.interval * 1000
+      );
+      buildImageCache();
+    });
 
-      return () => {
-        clearTimeout(timer);
-      };
-    },
-    [levels]
-  );
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [levels]);
 
   function showScore(stats) {
     levels.push(stats);

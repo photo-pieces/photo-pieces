@@ -2,8 +2,7 @@ export function getItemObject(key) {
   const value = localStorage.getItem(key);
   if (value) {
     return JSON.parse(atob(value));
-  }
-  else {
+  } else {
     return null;
   }
 }

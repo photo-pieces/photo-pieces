@@ -6,24 +6,25 @@ import { calculateTotalScore } from "../utils/utils";
 function groupByDate(snapshots) {
   const result = {};
   snapshots.reverse();
-  let highest={
-    score:0,level:0
-  }
-  snapshots.forEach(({ time,levels, ...rest }) => {
+  let highest = {
+    score: 0,
+    level: 0
+  };
+  snapshots.forEach(({ time, levels, ...rest }) => {
     const date = new Date(time);
     const dateString = date.toLocaleDateString();
     const timeString = date.toLocaleTimeString();
     const totalScore = calculateTotalScore(levels);
-    const level=levels.length;
-    const snapshot = { totalScore, timeString, level  };
+    const level = levels.length;
+    const snapshot = { totalScore, timeString, level };
     if (highest.score < totalScore) {
       highest = { score: totalScore, level: level };
     }
     if (result[dateString]) {
-        result[dateString].push(snapshot);
-      } else {
-        result[dateString] = [snapshot];
-      }
+      result[dateString].push(snapshot);
+    } else {
+      result[dateString] = [snapshot];
+    }
   });
   return { highest, items: result };
 }
@@ -31,11 +32,15 @@ export default function History({ history }) {
   const { snapshots } = getStats();
   const { items, highest } = groupByDate(snapshots);
   const dates = Object.keys(items);
-  return <div className="history-wrapper">
+  return (
+    <div className="history-wrapper">
       <div className="history-header">
         <div className="history-header-container">
           <div className="history-header-inner">
-            <div className="history-back-arrow" onClick={e => history.replace("/")}>
+            <div
+              className="history-back-arrow"
+              onClick={e => history.replace("/")}
+            >
               ❮
             </div>
             <div className="history-header-title">History</div>
@@ -59,14 +64,17 @@ export default function History({ history }) {
       </div>
 
       <div className="history-content">
-        {dates.length > 0 ? dates.map(date => {
-            return <div className="history-content-container" key={date}>
+        {dates.length > 0 ? (
+          dates.map(date => {
+            return (
+              <div className="history-content-container" key={date}>
                 <div className="history-date">
                   <div className="history-date-inner">{date}</div>
                 </div>
                 <div className="history-result-wrapper">
                   {items[date].map((item, i) => {
-                    return <div className="history-result" key={i}>
+                    return (
+                      <div className="history-result" key={i}>
                         <div className="history-time">{item.timeString}</div>
                         <div className="history-score">
                           <b className="score">{item.totalScore}</b> score
@@ -74,14 +82,20 @@ export default function History({ history }) {
                         <div className="history-level">
                           <b className="score">{item.level}</b> Level
                         </div>
-                      </div>;
+                      </div>
+                    );
                   })}
                 </div>
-              </div>;
-          }) : <div className="placeholder">
+              </div>
+            );
+          })
+        ) : (
+          <div className="placeholder">
             <img src="/assets/images/sad.svg" alt="sad" />
             <h3>You haven't played yet !!!</h3>
-          </div>}
+          </div>
+        )}
       </div>
-    </div>;
+    </div>
+  );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import "../styles/buttons.scss";
 function BaseButton({ className, onClick, children }) {
@@ -14,4 +14,3 @@ export function Link(props) {
 export function Button(props) {
   return <BaseButton className={"btn"} {...props} />;
 }
-
