@@ -35,10 +35,10 @@ module.exports = function(req, res) {
             <meta name="twitter:description" content="I scored ${total} level ${levels}. Play Photo Pieces. Photo Pieces is a fun and engaging free online game. Play it!">
             <meta name="twitter:image" content="https://photo-pieces.now.sh/api/screenshot?stats=${stats}">
             <style>
-                body {
-                    background: url(https://photo-pieces.now.sh/api/screenshot?stats=${stats});
-                    background-repeat: no-repeat;
-                    background-color: #20273e;
+                html {
+                  width: 100%;
+                  height: 100%;
+                  background: #20273e url(https://photo-pieces.now.sh/api/screenshot?stats=e2E6MTB9) center center no-repeat;
                 }
             </style>
         </head>
