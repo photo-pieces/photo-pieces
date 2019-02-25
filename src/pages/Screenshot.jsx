@@ -65,6 +65,7 @@ function ScoreCard({ total, lastLevelScore, levels, won }) {
       <img style={svgStyle} src="/assets/images/broken-heart.svg" alt="broken-heart" />
       <img style={svgStyle} src="/assets/images/pensive-face.svg" alt="pensive-face" />
         </React.Fragment>}</div>
+
     </div>
   );
 }
