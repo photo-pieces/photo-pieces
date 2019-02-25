@@ -1,9 +1,9 @@
 {
-   "increment": "patch",
+   "increment": "minor",
     "non-interactive": true,
     "requireUpstream": false,
     "git":{
-      "requireCleanWorkingDir": false
+      "requireCleanWorkingDir": true
     },
     "src": {
       "tagName": "v%s",
