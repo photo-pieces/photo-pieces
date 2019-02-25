@@ -1,11 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import * as BrowserRouter from "react-router-dom/es/BrowserRouter";
-import * as ServiceWorker from "./App/utils/service-worker";
-import Main from "./App/main";
+import * as ServiceWorker from "./utils/service-worker";
+import Main from "./main";
 
-const Router = BrowserRouter.default;
-const App = Main(Router);
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Main />, document.getElementById("root"));
 ServiceWorker.register();

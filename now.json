@@ -1,0 +1,54 @@
+{
+  "name": "photo-pieces",
+  "version": 2,
+  "alias": ["photo-pieces"],
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "build" }
+    },
+
+    {
+      "src": "api/*.js",
+      "use": "@now/node",
+      "config": { "maxLambdaSize": "50mb" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/screenshot",
+      "dest": "api/screenshot.js"
+    },
+    {
+      "src": "/api/share",
+      "dest": "api/share.js"
+    },
+    {
+      "src": "/api",
+      "dest": "api/index.js"
+    },
+    {
+      "src": "^/assets/(.*)",
+      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "^/static/(.*)",
+      "headers": { "cache-control": "s-maxage=31536000,immutable" },
+      "dest": "/static/$1"
+    },
+    { "src": "^/favicon.ico", "dest": "/favicon.ico" },
+    { "src": "^/asset-manifest.json", "dest": "/asset-manifest.json" },
+    { "src": "^/manifest.json", "dest": "/manifest.json" },
+    { "src": "^/precache-manifest.(.*)", "dest": "/precache-manifest.$1" },
+    {
+      "src": "^/service-worker.js",
+      "headers": { "cache-control": "s-maxage=0" },
+      "dest": "/service-worker.js"
+    }
+  ],
+  "github": {
+    "enabled": true
+  }
+}
