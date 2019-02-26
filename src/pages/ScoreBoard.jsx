@@ -26,7 +26,7 @@ function tweetTemplate(levels, total, result, lastLevelScore) {
       lastLevelScore
     })
   );
-  const link = `${window.location.origin}/api/screenshot?stats=${statsQuery}`;
+  const link = `${window.location.origin}/api/share?stats=${statsQuery}`;
   return createTwitterUrl(text, link);
 }
 
