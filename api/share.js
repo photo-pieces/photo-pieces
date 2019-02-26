@@ -4,7 +4,7 @@ module.exports = function(req, res) {
   const {
     query: { stats }
   } = parse(req.url, true);
-  const { levels = 0, total = 0 } = atob(stats);
+  const { levels = 0, total = 0 } = JSON.parse(atob(stats));
 
   const html = `
     <html>
@@ -48,3 +48,4 @@ module.exports = function(req, res) {
     `;
   res.end(html);
 };
+

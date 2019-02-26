@@ -9,7 +9,9 @@ function BaseButton({ className, onClick, children }) {
   );
 }
 export function Link(props) {
-  return <BaseButton className={"link"} {...props} />;
+  const {className="", ...rest}=props;
+  const cls=['link',className];
+  return <BaseButton className={cls.join(' ')} {...rest} />;
 }
 export function Button(props) {
   return <BaseButton className={"btn"} {...props} />;

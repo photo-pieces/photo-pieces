@@ -19,7 +19,7 @@ export default ({ location }) => {
     result = GAME_RESULT.LOST,
     total = 0,
     lastLevelScore = 0
-  } = atob(stats);
+  } = JSON.parse(atob(stats));
 
   const won = result === GAME_RESULT.WON;
   return (

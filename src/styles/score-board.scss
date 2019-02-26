@@ -42,3 +42,24 @@
     padding: 10px;
     background: #f7f7f7;  
 }
+.link-btns {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.social-media {
+    div{
+        display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+      .icon {
+        height: 1.5rem;
+        padding: 0;
+        background-color: white;
+        border-radius: 100%;
+        margin: 0 0.5rem;
+    }
+    
+  }
