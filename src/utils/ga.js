@@ -1,9 +1,9 @@
 function noop() {}
 const getGA = () => {
-  if (process.env.TRACKING_ID)
+  if (process.env.REACT_APP_TRACKING_ID)
     return import("react-ga").then(module => {
       const ReactGA = module && module.default ? module.default : module;
-      ReactGA.initialize(process.env.TRACKING_ID);
+      ReactGA.initialize(process.env.REACT_APP_TRACKING_ID);
       return ReactGA;
     });
   else {

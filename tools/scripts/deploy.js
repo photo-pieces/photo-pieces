@@ -4,7 +4,7 @@ require('dotenv').config()
 const execa = require('execa');
 const { alias } = require('./../../now.json');
 
-const envs = `TRACKING_ID=${ process.env.TRACKING_ID}`;
+const envs = `REACT_APP_TRACKING_ID=${ process.env.REACT_APP_TRACKING_ID}`;
 (async () => {
     try{
         const {stdout} = await execa('now',  ['-e',envs,'--public']);

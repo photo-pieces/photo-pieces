@@ -30,7 +30,7 @@
     "now-build": "yarn build",
     "now-dev": "npx dev-server -w",
     "start": "react-scripts start",
-    "build": "TRACKING_ID=${TRACKING_ID} react-scripts build && npm run generate-sw",
+    "build": "react-scripts build && npm run generate-sw",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "node tools/scripts/deploy.js",
