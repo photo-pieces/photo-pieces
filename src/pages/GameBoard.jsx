@@ -17,10 +17,10 @@ import Picture from "../Components/Picture/Picture";
 import PiecePreview from "../Components/PiecePreview";
 import { default as TouchBackend } from "react-dnd-touch-backend";
 import { buildImageCache } from "../utils/utils";
+import {useInterval} from './../utils/hooks';
 
 function useGameBoard(levels, history) {
   const [state, setState] = useState({});
-  let timer = null;
 
   useEffect(() => {
     if (levels.length === 0) {
@@ -28,17 +28,17 @@ function useGameBoard(levels, history) {
     }
     generateState(300, 300, levels.length).then(state => {
       setState({ ...state });
-      timer = setTimeout(
-        () => showScore(calculateStats(state)),
-        state.interval * 1000
-      );
-      buildImageCache();
     });
+  }, [levels.length]);
+  useInterval(function(){
+    if(state.picture){
+      showScore(calculateStats(state));
+    }
+  },state.interval * 1000)
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [levels]);
+  useEffect(function(){
+    buildImageCache();
+  },[])
 
   function showScore(stats) {
     levels.push(stats);
