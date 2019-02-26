@@ -5,6 +5,7 @@ const execa = require('execa');
 const { alias } = require('./../../now.json');
 
 const envs = `REACT_APP_TRACKING_ID=${ process.env.REACT_APP_TRACKING_ID}`;
+console.log(envs)
 (async () => {
     try{
         const {stdout} = await execa('now',  ['-e',envs,'--public']);
