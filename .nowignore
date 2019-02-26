@@ -4,6 +4,8 @@ build
 .*
 *.md
 LICENSE
+
+_redirects
 netlify.toml
 
 
