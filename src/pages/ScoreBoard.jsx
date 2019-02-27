@@ -17,7 +17,7 @@ function SocialMediaButton({ onClick }) {
   );
 }
 function tweetTemplate(levels, total, result, lastLevelScore) {
-  const text = `I scored ${total} til level ${levels}. Play Photo Pieces. It is a fun and engaging free online game. Play it!  `;
+  const description=`I scored ${total} 🔥 til level ${levels} 🚀. Play Photo Pieces. It is a fun and engaging free online game. Play it! `;
   const statsQuery = btoa(
     JSON.stringify({
       levels,
@@ -27,7 +27,7 @@ function tweetTemplate(levels, total, result, lastLevelScore) {
     })
   );
   const link = `${window.location.origin}/api/share?stats=${statsQuery}`;
-  return createTwitterUrl(text, link);
+  return createTwitterUrl(description, link);
 }
 
 export default ({ location, history }) => {
@@ -47,6 +47,11 @@ export default ({ location, history }) => {
       lastLevel.result,
       lastLevel.score
     );
+    ReactGA.event({
+      category: "Navigation",
+      action: "Share on twitter",
+      label: "ScoreBoard"
+    });
     window.open(tpl);
   }
 

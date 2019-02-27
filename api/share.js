@@ -6,6 +6,7 @@ module.exports = function(req, res) {
   } = parse(req.url, true);
   const { levels = 0, total = 0 } = JSON.parse(atob(stats));
   const img=`https://photo-pieces.now.sh/api/screenshot?stats=${stats}`;
+  const description=`I scored ${total} 🔥 til level ${levels} 🚀. Play Photo Pieces. It is a fun and engaging free online game. Play it!`;
   const html = `
     <html>
         <head>
@@ -32,7 +33,7 @@ module.exports = function(req, res) {
             <meta name="twitter:site" content="@kuldeepkeshwar">
             <meta name="twitter:creator" content="@kuldeepkeshwar">
             <meta name="twitter:title" content="Play Photo Pieces">
-            <meta name="twitter:description" content="I scored ${total} level ${levels}. Play Photo Pieces. Photo Pieces is a fun and engaging free online game. Play it!">
+            <meta name="twitter:description" content="${description}">
             <meta name="twitter:image" content="${img}">
             <style>
                 html {
