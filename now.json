@@ -8,7 +8,6 @@
       "use": "@now/static-build",
       "config": { "distDir": "build" }
     },
-
     {
       "src": "api/*.js",
       "use": "@now/node",
@@ -25,12 +24,12 @@
       "dest": "api/share.js"
     },
     {
-      "src": "/api",
-      "dest": "api/index.js"
-    },
-    {
       "src": "/api/version",
       "dest": "api/version.js"
+    },
+    {
+      "src": "/api",
+      "dest": "api/index.js"
     },
     {
       "src": "^/assets/(.*)",

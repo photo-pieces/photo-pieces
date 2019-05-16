@@ -9,7 +9,7 @@ module.exports = {
     navigateFallbackBlacklist: [/^\/api/],
     runtimeCaching: [
       {
-        urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+        urlPattern: /picsum.photos/,
         handler: 'cacheFirst',
         options: {
           cacheName: 'images',

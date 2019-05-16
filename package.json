@@ -1,6 +1,6 @@
 {
   "name": "photo-pieces",
-  "version": "1.31.6",
+  "version": "1.31.8",
   "description": "photo-pieces game built in React",
   "keywords": [
     "photo-pieces",
@@ -29,7 +29,7 @@
     "prerelease": "git-branch-is master",
     "format": "npx prettier  api/**/*.js* --write & npx prettier  src/**/*.js* --write",
     "now-build": "yarn build",
-    "now-dev": "npx dev-server -w",
+    "now-dev": "now dev",
     "start": "react-scripts start",
     "build": "react-scripts build && npm run generate-sw",
     "test": "react-scripts test",
@@ -47,7 +47,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@iridium/dev-server": "^0.0.2",
     "cross-env": "^5.2.0",
     "dotenv": "^6.2.0",
     "execa": "^1.0.0",

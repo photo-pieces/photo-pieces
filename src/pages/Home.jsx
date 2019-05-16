@@ -10,6 +10,8 @@ import Footer from "../Components/Footer";
 import Hamburger from "../Components/Hamburger";
 import UpdateBanner from "../Components/UpdateBanner";
 import { fetchCurrentGame } from "../utils/game";
+import axios from "axios";
+import packageJson from './../../package.json';
 
 function AppLogo() {
   return (
@@ -24,9 +26,23 @@ function AppLogo() {
 function useHome(history) {
   const [showBanner, setShowBanner] = useState(false);
   useEffect(() => {
+      const id=setInterval(() => {
+        axios.get('/api/version')
+        .then((response) => {
+            if(response.data!==packageJson.version){
+              setShowBanner(true);
+            }
+        })
+        .catch(function(error){
+            console.error(error)
+        });
+    }, 30000);
     ServiceWorker.onUpdate(() => {
       setShowBanner(true);
     });
+    return function(){
+      clearInterval(id)
+    }
   }, []);
   function clickHandler(mute, muted) {
     mute(!muted);
