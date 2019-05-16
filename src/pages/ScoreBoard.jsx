@@ -36,10 +36,18 @@ export default ({ location, history }) => {
   const lastLevel = levels[levels.length - 1] || {};
   const won = lastLevel.result ? lastLevel.result === GAME_RESULT.WON : false;
   ReactGA.event({
-    category: "Level",
-    action: "" + levels.length,
-    label: "" + lastLevel.score
+    category: "Score",
+    action: "Level:" + levels.length,
+    value: lastLevel.score
   });
+  if(!won){
+    ReactGA.event({
+      category: "Highest Score",
+      action: "Levels",
+      label: `${levels.length}`,
+      value: total
+    });
+  }
   function twitterClickHanlder() {
     const tpl = tweetTemplate(
       levels.length,
@@ -49,8 +57,7 @@ export default ({ location, history }) => {
     );
     ReactGA.event({
       category: "Navigation",
-      action: "Share on twitter",
-      label: "ScoreBoard"
+      action: "Share on twitter"
     });
     window.open(tpl);
   }
@@ -78,9 +85,9 @@ export default ({ location, history }) => {
             <Link
               onClick={e => {
                 ReactGA.event({
-                  category: "Navigation",
-                  action: "New Game",
-                  label: "ScoreBoard"
+                  category: "Buttons",
+                  action: "click",
+                  label: "New Game"
                 });
                 history.replace("/new-game");
               }}
@@ -95,9 +102,9 @@ export default ({ location, history }) => {
           <Button
             onClick={e => {
               ReactGA.event({
-                category: "Navigation",
-                action: "New Game",
-                label: "ScoreBoard"
+                category: "Buttons",
+                action: "click",
+                label: "Play Again"
               });
               history.replace("/new-game");
             }}

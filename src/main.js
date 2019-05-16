@@ -19,7 +19,7 @@ const Router = BrowserRouter.default;
 export default () => (
   <Router>
     <AudioProvider>
-      <Route exact path="/" component={HomeRoute} />
+      <Route exact path="/" component={withTracker(HomeRoute)} />
       <Route path="/new-game" component={withTracker(GameBoardRoute)} />
       <Route path="/score" component={withTracker(ScoreBoardRoute)} />
       <Route path="/history" component={withTracker(HistoryRoute)} />
