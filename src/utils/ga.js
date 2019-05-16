@@ -1,9 +1,18 @@
+
+import PackageJson from "./../../package.json";
 function noop() {}
 const getGA = () => {
   if (process.env.NODE_ENV==='production')
     return import("react-ga").then(module => {
       const ReactGA = module && module.default ? module.default : module;
-      ReactGA.initialize('UA-126436258-1');
+      ReactGA.initialize('UA-126436258-1', {
+        gaOptions: {
+          siteSpeedSampleRate: 100
+        }
+      });
+      ReactGA.set({"appId":"photo-pieces.now.sh"})
+      ReactGA.set({"appName":"photo-pieces"})
+      ReactGA.set({"appVersion":PackageJson.version})
       return ReactGA;
     });
   else {

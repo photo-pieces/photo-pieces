@@ -29,6 +29,10 @@
       "dest": "api/index.js"
     },
     {
+      "src": "/api/version",
+      "dest": "api/version.js"
+    },
+    {
       "src": "^/assets/(.*)",
       "headers": { "cache-control": "s-maxage=31536000,immutable" },
       "dest": "/assets/$1"
