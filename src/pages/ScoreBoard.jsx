@@ -37,14 +37,15 @@ export default ({ location, history }) => {
   const won = lastLevel.result ? lastLevel.result === GAME_RESULT.WON : false;
   ReactGA.event({
     category: "Score",
-    action: "Level:" + levels.length,
+    action: `Level: ${levels.length}`,
+    label:`${lastLevel.score}`,
     value: lastLevel.score
   });
   if(!won){
     ReactGA.event({
       category: "Highest Score",
-      action: "Levels",
-      label: `${levels.length}`,
+      action: `Level: ${levels.length}`,
+      label: `${total}`,
       value: total
     });
   }

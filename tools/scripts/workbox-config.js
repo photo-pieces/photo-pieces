@@ -5,26 +5,33 @@ module.exports = {
     clientsClaim: true,
     skipWaiting: true,
     offlineGoogleAnalytics: true,
+    //cleanupOutdatedCaches: true,
     navigateFallback: '/index.html',
     navigateFallbackBlacklist: [/^\/api/],
     runtimeCaching: [
       {
-        urlPattern: /picsum.photos/,
+        urlPattern: new RegExp('^https://picsum.photos/'),
         handler: 'cacheFirst',
         options: {
           cacheName: 'images',
+          cacheableResponse: {
+            statuses: [0, 200]
+          },
           expiration: {
-            maxEntries: 50,
+            maxEntries: 150,
           },
         },
       },
       {
-        urlPattern: /(cdn.polyfill.io|fonts.gstatic.com|cdn.jsdelivr.net|fonts.googleapis.com)/,
+        urlPattern: new RegExp('^https://(cdn.polyfill.io|fonts.gstatic.com|cdn.jsdelivr.net|fonts.googleapis.com)/'),
         handler: 'cacheFirst',
         options: {
           cacheName: 'external',
           expiration: {
             maxEntries: 50,
+          },
+          cacheableResponse: {
+            statuses: [0, 200]
           },
         },
       }

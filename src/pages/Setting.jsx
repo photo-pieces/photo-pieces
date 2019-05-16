@@ -38,9 +38,9 @@ export default function({ history }) {
                   checked={!muted}
                   onChange={value => {
                     ReactGA.event({
-                      category: "Volume",
-                      action: "Volume Button",
-                      label: "" + !muted
+                      action: "click",
+                      category: "Buttons",
+                      label: `Volume ${muted?'-':'+'}`
                     });
                     methods.mute(value);
                   }}
@@ -57,8 +57,9 @@ export default function({ history }) {
                     clearStats();
                     history.replace("/");
                     ReactGA.event({
-                      category: "Clear History",
-                      action: "Clear History"
+                      action: "click",
+                      category: "Button",
+                      label: `Clear History`
                     });
                   }}
                   className="settings-list-item-title"
