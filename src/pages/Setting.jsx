@@ -58,7 +58,7 @@ export default function({ history }) {
                     history.replace("/");
                     ReactGA.event({
                       action: "click",
-                      category: "Button",
+                      category: "Buttons",
                       label: `Clear History`
                     });
                   }}
