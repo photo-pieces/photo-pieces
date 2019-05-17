@@ -13,6 +13,23 @@ const getGA = () => {
       ReactGA.set({"appId":"photo-pieces.now.sh"})
       ReactGA.set({"appName":"photo-pieces"})
       ReactGA.set({"appVersion":PackageJson.version})
+      ReactGA.event({
+        category: "Versions",
+        action: `version: ${PackageJson.version}`,
+        label:PackageJson.version,
+        value: PackageJson.version
+      });
+      if (window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches) {  
+        ReactGA.event({
+          category: "Display Mode",
+          action: "standalone",
+        }); 
+      }else{
+        ReactGA.event({
+          category: "Display Mode",
+          action: "non-standalone",
+        });
+      } 
       return ReactGA;
     });
   else {
