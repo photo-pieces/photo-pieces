@@ -22,7 +22,7 @@
     "react-ga": "^2.5.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "3.0.1",
-    "workbox-cli": "^3.6.3"
+    "workbox-cli": "^4.3.1"
   },
   "scripts": {
     "release": "release-it --config=tools/scripts/.release-it.json --verbose",
