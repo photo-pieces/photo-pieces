@@ -15,7 +15,7 @@
     "axios": "^0.18.0",
     "chrome-aws-lambda": "^1.16.1",
     "puppeteer-core": "^1.17.0",
-    "react": "^16.8.3",
+    "react": "^16.8.6",
     "react-dnd": "^7.4.5",
     "react-dnd-touch-backend": "^0.8.1",
     "react-dom": "^16.8.6",
