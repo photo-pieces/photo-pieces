@@ -2,14 +2,17 @@
    "increment": "minor",
     "non-interactive": true,
     "requireUpstream": false,
+    "scripts": {
+      "afterRelease": "yarn deploy"
+    },
     "git":{
+      "addUntrackedFiles":true,
       "requireCleanWorkingDir": false
     },
     "src": {
       "tagName": "v%s",
       "push": true,
-      "commit":true,
-      "afterReleaseCommand": "yarn deploy"
+      "commit":true
     },
     "github": {
       "release": false
