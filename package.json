@@ -20,7 +20,7 @@
     "react-dnd-touch-backend": "^0.8.1",
     "react-dom": "^16.8.3",
     "react-ga": "^2.5.7",
-    "react-router-dom": "^4.3.1",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "workbox-cli": "^4.3.1"
   },
