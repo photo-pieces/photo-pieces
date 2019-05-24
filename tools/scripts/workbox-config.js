@@ -11,7 +11,7 @@ module.exports = {
     runtimeCaching: [
       {
         urlPattern: new RegExp('^https://picsum.photos/'),
-        handler: 'cacheFirst',
+        handler: 'CacheFirst',
         options: {
           cacheName: 'images',
           cacheableResponse: {
@@ -24,7 +24,7 @@ module.exports = {
       },
       {
         urlPattern: new RegExp('^https://(cdn.polyfill.io|fonts.gstatic.com|cdn.jsdelivr.net|fonts.googleapis.com)/'),
-        handler: 'cacheFirst',
+        handler: 'CacheFirst',
         options: {
           cacheName: 'external',
           expiration: {

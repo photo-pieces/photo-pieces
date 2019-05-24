@@ -11,7 +11,7 @@ function ComponentLoader(props) {
           Component && Component.default ? Component.default : Component
       });
     });
-  }, []);
+  }, [props]);
   const { Component } = state;
   return Component ? <Component {...props} /> : null;
 }

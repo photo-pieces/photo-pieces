@@ -3,7 +3,7 @@
     "non-interactive": true,
     "requireUpstream": false,
     "git":{
-      "requireCleanWorkingDir": true
+      "requireCleanWorkingDir": false
     },
     "src": {
       "tagName": "v%s",

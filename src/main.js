@@ -1,7 +1,6 @@
 import React from "react";
-import Route from "react-router-dom/es/Route";
-
-import * as BrowserRouter from "react-router-dom/es/BrowserRouter";
+import { Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { AudioProvider } from "./Components/AudioManager";
 import "./styles/main.scss";
 import {
@@ -14,7 +13,7 @@ import {
 } from "./routes";
 import withTracker from "./Components/withTracker";
 
-const Router = BrowserRouter.default;
+const Router = BrowserRouter;
 
 export default () => (
   <Router>

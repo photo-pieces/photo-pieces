@@ -29,7 +29,7 @@ function useGameBoard(levels, history) {
     generateState(300, 300, levels.length).then(state => {
       setState({ ...state });
     });
-  }, [levels.length]);
+  }, [levels, levels.length]);
   useInterval(function(){
     if(state.picture){
       showScore(calculateStats(state));
