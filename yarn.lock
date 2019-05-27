@@ -2887,10 +2887,10 @@ chownr@^1.1.1:
   resolved "https://registry.yarnpkg.com/chownr/-/chownr-1.1.1.tgz#54726b8b8fff4df053c42187e801fb4412df1494"
   integrity sha512-j38EvO5+LHX84jlo6h4UzmOwi0UgW61WRyPtJz4qaadK5eY3BTS5TY/S1Stc3Uk2lIM6TPevAlULiEJwie860g==
 
-chrome-aws-lambda@^1.16.1:
-  version "1.16.1"
-  resolved "https://registry.yarnpkg.com/chrome-aws-lambda/-/chrome-aws-lambda-1.16.1.tgz#3d424a8806a2ff285b7d3f4366c1a2d6b5dff079"
-  integrity sha512-dt6jUzCWZS1ns2XltxabVCxmfZabIJPVzhFce540Gm7C9lTS+j1kHVvvrP8qyyehkWz6tPXDPPVPxfxgZOP4xg==
+chrome-aws-lambda@^1.17.0:
+  version "1.17.0"
+  resolved "https://registry.yarnpkg.com/chrome-aws-lambda/-/chrome-aws-lambda-1.17.0.tgz#29c7dab63163a1d075a2df2263161873c8c84874"
+  integrity sha512-qcOWPW+4Lsr+G4F9i/CJZzlVe3vDXBwS/2ootGEhcn4puzPHwMh9JPrm5+Kt96JpsqiueH/tuq0+Y9W+1U3R8w==
 
 chrome-trace-event@^1.0.0:
   version "1.0.0"
