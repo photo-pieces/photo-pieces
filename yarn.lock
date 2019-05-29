@@ -9391,11 +9391,12 @@ react-dev-utils@^9.0.1:
     strip-ansi "5.2.0"
     text-table "0.2.0"
 
-react-dnd-touch-backend@^0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/react-dnd-touch-backend/-/react-dnd-touch-backend-0.8.1.tgz#d306883bbdd5663c52ab2e6722725709319c7ceb"
-  integrity sha512-pjy8QTvphM2vSua+e7eUUexPmPKyaWpXvf1U0kWBhMtWTRQGlaqqu4O3BfRKy4PI58OqmAh+YWv9RfIUPer9ug==
+react-dnd-touch-backend@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/react-dnd-touch-backend/-/react-dnd-touch-backend-0.8.3.tgz#85d961ec8578dc9efa5b78000ea904d37e01e60f"
+  integrity sha512-LLJlpeJftRreP9ixm3yfd1JEXf+6BeKo5dkfJFHvNSOEOu+FDSwNl5l8uAG0FeD4z2ZVi7RDQ/jUxdjkBV3zBg==
   dependencies:
+    dnd-core "^7.4.4"
     invariant "^2.2.4"
 
 react-dnd@^7.4.5:
