@@ -16,7 +16,7 @@
     "chrome-aws-lambda": "^1.17.1",
     "puppeteer-core": "^1.17.0",
     "react": "^16.8.6",
-    "react-dnd": "^7.4.5",
+    "react-dnd": "^7.5.0",
     "react-dnd-touch-backend": "^0.8.3",
     "react-dom": "^16.8.6",
     "react-ga": "^2.5.7",
