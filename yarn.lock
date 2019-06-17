@@ -9392,10 +9392,10 @@ react-dnd-touch-backend@^0.8.3:
     dnd-core "^7.4.4"
     invariant "^2.2.4"
 
-react-dnd@^7.6.0:
-  version "7.6.0"
-  resolved "https://registry.yarnpkg.com/react-dnd/-/react-dnd-7.6.0.tgz#b83f469e0d8a038b7b8c5a9cf85cdc7462a01cd9"
-  integrity sha512-PLxMBsG4ee9Wz3kGeD3wTOUvfFAk7/DjxfXaC/E6nqO3iMowpxLr3TRPTjeDQALPv50HzGLo/3dJnEmzHsz33g==
+react-dnd@^7.6.1:
+  version "7.6.1"
+  resolved "https://registry.yarnpkg.com/react-dnd/-/react-dnd-7.6.1.tgz#7a279102b9613e5224a2d1608d28c55fbb954260"
+  integrity sha512-69bFVSGiyO/N+HascEUdJ35rhqUDZ/AFUOruB+jzo6dyTL/ojT8+y9xU4fmC4j8RSOqSpUkC6bqwaGQ2tJhzeQ==
   dependencies:
     "@types/hoist-non-react-statics" "^3.3.1"
     dnd-core "^7.6.0"
