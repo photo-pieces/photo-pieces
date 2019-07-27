@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "NitishTyagi",
+      "name": "Nitish tyagi",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/5371839?v=4",
+      "profile": "http://www.nikkk.me",
+      "contributions": [
+        "design"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "photo-pieces",
+  "projectOwner": "photo-pieces",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
