@@ -1,8 +1,7 @@
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 
 <p align="center">
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
   <kbd><img src="https://github.com/photo-pieces/photo-pieces/raw/master/tools/videos/logo.gif"/></kbd>
   <br><br>
   <b>Place the pieces of the picture in their proper position!</b>
