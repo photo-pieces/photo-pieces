@@ -6,13 +6,22 @@
   "commit": false,
   "contributors": [
     {
+      "login": "kuldeepkeshwar",
+      "name": "anotherjsguy",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/10448534?v=4",
+      "profile": "https://in.linkedin.com/in/kuldeepkeshwar",
+      "contributions": [
+        "code","design"
+      ]
+    },
+    {
       "login": "NitishTyagi",
       "name": "Nitish tyagi",
       "avatar_url": "https://avatars1.githubusercontent.com/u/5371839?v=4",
       "profile": "http://www.nikkk.me",
       "contributions": [
         "design"
-      ]
+       ]
     }
   ],
   "contributorsPerLine": 7,
