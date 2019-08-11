@@ -9,7 +9,7 @@ import {
 } from "../utils/game";
 
 import Deck from "../Components/Deck/Deck";
-import { DragDropContext } from "react-dnd";
+import { DndProvider } from "react-dnd";
 import { GAME_RESULT } from "../utils/constants";
 import Header from "../Components/Header";
 import Level from "../Components/Level";
@@ -17,7 +17,7 @@ import Picture from "../Components/Picture/Picture";
 import PiecePreview from "../Components/PiecePreview";
 import { default as TouchBackend } from "react-dnd-touch-backend";
 import { buildImageCache } from "../utils/utils";
-import {useInterval} from './../utils/hooks';
+import { useInterval } from "./../utils/hooks";
 
 function useGameBoard(levels, history) {
   const [state, setState] = useState({});
@@ -26,19 +26,20 @@ function useGameBoard(levels, history) {
     if (levels.length === 0) {
       saveStats(levels);
     }
+
     generateState(300, 300, levels.length).then(state => {
       setState({ ...state });
     });
   }, [levels, levels.length]);
-  useInterval(function(){
-    if(state.picture){
+  useInterval(function() {
+    if (state.picture) {
       showScore(calculateStats(state));
     }
-  },state.interval * 1000)
+  }, state.interval * 1000);
 
-  useEffect(function(){
+  useEffect(function() {
     buildImageCache();
-  },[])
+  }, []);
 
   function showScore(stats) {
     levels.push(stats);
@@ -55,7 +56,7 @@ function useGameBoard(levels, history) {
   return [state, dropPieceHandler];
 }
 function GameBoard({ location, history }) {
-  const { levels = [] } = location.state || {};
+  const { levels } = location.state || {};
   const [state, dropPieceHandler] = useGameBoard(levels, history);
   if (!state.picture) {
     return null;
@@ -71,6 +72,10 @@ function GameBoard({ location, history }) {
     </div>
   );
 }
-export default DragDropContext(TouchBackend({ enableMouseEvents: true }))(
-  GameBoard
-);
+export default (props) => {
+  return (
+    <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }}>
+      <GameBoard {...props}/>
+    </DndProvider>
+  );
+};

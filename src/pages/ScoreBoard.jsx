@@ -90,7 +90,7 @@ export default ({ location, history }) => {
                   action: "click",
                   label: "New Game"
                 });
-                history.replace("/new-game");
+                history.replace("/new-game",{ levels:[] });
               }}
             >
               New Game
@@ -107,7 +107,7 @@ export default ({ location, history }) => {
                 action: "click",
                 label: "Play Again"
               });
-              history.replace("/new-game");
+              history.replace("/new-game",{ levels:[] });
             }}
           >
             Play Again
