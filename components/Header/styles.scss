@@ -1,0 +1,110 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  .logo {
+    width: 32px;
+  }
+  .progress-bar {
+    position: relative;
+    width: 240px;
+    height: 20px;
+    background: #ededed;
+    border-radius: 10px;
+    overflow: hidden;
+    .progress {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      border-radius: 10px;
+      bottom: 0;
+      transition: all 3s ease;
+      animation-name: progress-animation;
+      animation-duration: 20s;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+      width: 0;
+    }
+  }
+}
+
+@keyframes progress-animation {
+  0% {
+    width: 100%;
+    background: #7474bf; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #348ac7,
+      #7474bf
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #348ac7,
+      #7474bf
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  25% {
+    width: 75%;
+    background: #7474bf; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #348ac7,
+      #7474bf
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #348ac7,
+      #7474bf
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  50% {
+    width: 50%;
+    background: #7474bf; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #348ac7,
+      #7474bf
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #348ac7,
+      #7474bf
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  75% {
+    width: 25%;
+    background: #7474bf; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #348ac7,
+      #7474bf
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #348ac7,
+      #7474bf
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  100% {
+    width: 0%;
+    background: red; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      red,
+      red
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      red,
+      red
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+}

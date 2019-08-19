@@ -1,0 +1,27 @@
+.hamburger {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 5px;
+  .hamburger-line {
+    width: 100%;
+    background: #fff;
+    height: 3px;
+    display: block;
+    border-radius: 6px;
+    transition: transform 0.4s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    position: relative;
+    &.first {
+      width: 50%;
+    }
+    &.third {
+      width: 50%;
+      margin-left: 50%;
+      transform-origin: left;
+    }
+  }
+}

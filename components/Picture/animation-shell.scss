@@ -1,0 +1,15 @@
+.piece-svg {
+    z-index: 9999;
+    position: absolute;
+    .path {
+      animation: dash 10s linear infinite;
+      animation-direction: reverse;
+      stroke-dasharray: 20;
+    }
+  }
+
+@keyframes dash {
+    to {
+      stroke-dashoffset: 1000;
+    }
+  }

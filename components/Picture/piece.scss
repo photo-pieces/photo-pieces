@@ -1,0 +1,26 @@
+.piece {
+  position: absolute;
+  cursor: crosshair;
+  background: black;
+  border: 0px dashed;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  text-shadow: 0px 1px 1px #444;
+  
+  &.matched {
+    color: #fff;
+    animation-name: none;
+    opacity: 0.5;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  &.allowed {
+    background: green;
+  }
+  &.not-allowed {
+    background: red;
+  }
+}
