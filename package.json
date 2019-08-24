@@ -83,7 +83,7 @@
     "now-build": "yarn build",
     "now-dev": "now dev",
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js && npm run generate-sw",
+    "build": "node scripts/build.js && npm run generate-sw && node ci-env.js",
     "test": "node scripts/test.js",
     "deploy": "node tools/scripts/deploy.js",
     "generate-sw": "npx workbox generateSW tools/scripts/workbox-config.js"
