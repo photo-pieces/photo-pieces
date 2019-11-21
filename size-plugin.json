@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": 1574353054055,
+    "timestamp": 1574353059230,
     "files": [
       {
         "filename": "static/css/main.e9ce84a7.chunk.css",
@@ -11,8 +11,8 @@
       {
         "filename": "static/js/main.********.chunk.js",
         "previous": 3671,
-        "size": 3682,
-        "diff": 11
+        "size": 3683,
+        "diff": 12
       },
       {
         "filename": "static/js/runtime~main.********.js",
