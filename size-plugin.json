@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": 1574352540145,
+    "timestamp": 1574352718789,
     "files": [
       {
         "filename": "static/css/main.e9ce84a7.chunk.css",
@@ -11,26 +11,26 @@
       {
         "filename": "static/js/main.********.chunk.js",
         "previous": 3671,
-        "size": 3679,
-        "diff": 8
+        "size": 3681,
+        "diff": 10
       },
       {
         "filename": "static/js/runtime~main.********.js",
         "previous": 1577,
-        "size": 1578,
-        "diff": 1
+        "size": 1584,
+        "diff": 7
       },
       {
         "filename": "static/js/2.********.chunk.js",
         "previous": 7322,
-        "size": 7322,
-        "diff": 0
+        "size": 7372,
+        "diff": 50
       },
       {
         "filename": "static/js/3.********.chunk.js",
         "previous": 46988,
-        "size": 46988,
-        "diff": 0
+        "size": 47126,
+        "diff": 138
       },
       {
         "filename": "static/css/4.5c02d70c.chunk.css",
@@ -41,14 +41,14 @@
       {
         "filename": "static/js/4.********.chunk.js",
         "previous": 3299,
-        "size": 3299,
-        "diff": 0
+        "size": 3313,
+        "diff": 14
       },
       {
         "filename": "static/js/5.********.chunk.js",
         "previous": 16516,
-        "size": 16516,
-        "diff": 0
+        "size": 16607,
+        "diff": 91
       },
       {
         "filename": "static/css/6.9a287f55.chunk.css",
@@ -59,8 +59,8 @@
       {
         "filename": "static/js/6.********.chunk.js",
         "previous": 2512,
-        "size": 2513,
-        "diff": 1
+        "size": 2529,
+        "diff": 17
       },
       {
         "filename": "static/css/7.bc68f5aa.chunk.css",
@@ -71,8 +71,8 @@
       {
         "filename": "static/js/7.********.chunk.js",
         "previous": 4220,
-        "size": 4221,
-        "diff": 1
+        "size": 4233,
+        "diff": 13
       },
       {
         "filename": "static/css/8.9ac76b08.chunk.css",
@@ -83,8 +83,8 @@
       {
         "filename": "static/js/8.********.chunk.js",
         "previous": 4422,
-        "size": 4423,
-        "diff": 1
+        "size": 4434,
+        "diff": 12
       },
       {
         "filename": "static/css/9.6c9b6cc4.chunk.css",
@@ -95,8 +95,8 @@
       {
         "filename": "static/js/9.********.chunk.js",
         "previous": 1626,
-        "size": 1626,
-        "diff": 0
+        "size": 1631,
+        "diff": 5
       },
       {
         "filename": "static/css/10.6c9b6cc4.chunk.css",
@@ -113,8 +113,8 @@
       {
         "filename": "static/js/11.********.chunk.js",
         "previous": 4423,
-        "size": 4423,
-        "diff": 0
+        "size": 4432,
+        "diff": 9
       },
       {
         "filename": "static/css/main.8d963b76.chunk.css",
