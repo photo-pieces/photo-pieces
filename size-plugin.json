@@ -1,1 +1,282 @@
-[{"timestamp":1565625472485,"files":[{"filename":"static/css/main.e9ce84a7.chunk.css","previous":0,"size":236,"diff":236},{"filename":"static/js/main.********.chunk.js","previous":0,"size":3671,"diff":3671},{"filename":"static/js/runtime~main.********.js","previous":0,"size":1577,"diff":1577},{"filename":"static/js/2.********.chunk.js","previous":0,"size":7322,"diff":7322},{"filename":"static/js/3.********.chunk.js","previous":0,"size":46988,"diff":46988},{"filename":"static/css/4.5c02d70c.chunk.css","previous":0,"size":922,"diff":922},{"filename":"static/js/4.********.chunk.js","previous":0,"size":3299,"diff":3299},{"filename":"static/js/5.********.chunk.js","previous":0,"size":16516,"diff":16516},{"filename":"static/css/6.9a287f55.chunk.css","previous":0,"size":999,"diff":999},{"filename":"static/js/6.********.chunk.js","previous":0,"size":2512,"diff":2512},{"filename":"static/css/7.bc68f5aa.chunk.css","previous":0,"size":727,"diff":727},{"filename":"static/js/7.********.chunk.js","previous":0,"size":4220,"diff":4220},{"filename":"static/css/8.9ac76b08.chunk.css","previous":0,"size":617,"diff":617},{"filename":"static/js/8.********.chunk.js","previous":0,"size":4422,"diff":4422},{"filename":"static/css/9.6c9b6cc4.chunk.css","previous":0,"size":629,"diff":629},{"filename":"static/js/9.********.chunk.js","previous":0,"size":1626,"diff":1626},{"filename":"static/css/10.6c9b6cc4.chunk.css","previous":0,"size":630,"diff":630},{"filename":"static/js/10.********.chunk.js","previous":0,"size":1030,"diff":1030},{"filename":"static/js/11.********.chunk.js","previous":0,"size":4423,"diff":4423}]}]
+[
+  {
+    "timestamp": 1574352540145,
+    "files": [
+      {
+        "filename": "static/css/main.e9ce84a7.chunk.css",
+        "previous": 236,
+        "size": 0,
+        "diff": -236
+      },
+      {
+        "filename": "static/js/main.********.chunk.js",
+        "previous": 3671,
+        "size": 3679,
+        "diff": 8
+      },
+      {
+        "filename": "static/js/runtime~main.********.js",
+        "previous": 1577,
+        "size": 1578,
+        "diff": 1
+      },
+      {
+        "filename": "static/js/2.********.chunk.js",
+        "previous": 7322,
+        "size": 7322,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/3.********.chunk.js",
+        "previous": 46988,
+        "size": 46988,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/4.5c02d70c.chunk.css",
+        "previous": 922,
+        "size": 0,
+        "diff": -922
+      },
+      {
+        "filename": "static/js/4.********.chunk.js",
+        "previous": 3299,
+        "size": 3299,
+        "diff": 0
+      },
+      {
+        "filename": "static/js/5.********.chunk.js",
+        "previous": 16516,
+        "size": 16516,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/6.9a287f55.chunk.css",
+        "previous": 999,
+        "size": 0,
+        "diff": -999
+      },
+      {
+        "filename": "static/js/6.********.chunk.js",
+        "previous": 2512,
+        "size": 2513,
+        "diff": 1
+      },
+      {
+        "filename": "static/css/7.bc68f5aa.chunk.css",
+        "previous": 727,
+        "size": 0,
+        "diff": -727
+      },
+      {
+        "filename": "static/js/7.********.chunk.js",
+        "previous": 4220,
+        "size": 4221,
+        "diff": 1
+      },
+      {
+        "filename": "static/css/8.9ac76b08.chunk.css",
+        "previous": 617,
+        "size": 0,
+        "diff": -617
+      },
+      {
+        "filename": "static/js/8.********.chunk.js",
+        "previous": 4422,
+        "size": 4423,
+        "diff": 1
+      },
+      {
+        "filename": "static/css/9.6c9b6cc4.chunk.css",
+        "previous": 629,
+        "size": 0,
+        "diff": -629
+      },
+      {
+        "filename": "static/js/9.********.chunk.js",
+        "previous": 1626,
+        "size": 1626,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/10.6c9b6cc4.chunk.css",
+        "previous": 630,
+        "size": 0,
+        "diff": -630
+      },
+      {
+        "filename": "static/js/10.********.chunk.js",
+        "previous": 1030,
+        "size": 1031,
+        "diff": 1
+      },
+      {
+        "filename": "static/js/11.********.chunk.js",
+        "previous": 4423,
+        "size": 4423,
+        "diff": 0
+      },
+      {
+        "filename": "static/css/main.8d963b76.chunk.css",
+        "previous": 0,
+        "size": 237,
+        "diff": 237
+      },
+      {
+        "filename": "static/css/4.8acb1c39.chunk.css",
+        "previous": 0,
+        "size": 922,
+        "diff": 922
+      },
+      {
+        "filename": "static/css/6.0d577bb6.chunk.css",
+        "previous": 0,
+        "size": 998,
+        "diff": 998
+      },
+      {
+        "filename": "static/css/7.4fcc0988.chunk.css",
+        "previous": 0,
+        "size": 728,
+        "diff": 728
+      },
+      {
+        "filename": "static/css/8.0321c0c3.chunk.css",
+        "previous": 0,
+        "size": 617,
+        "diff": 617
+      },
+      {
+        "filename": "static/css/9.699c4858.chunk.css",
+        "previous": 0,
+        "size": 630,
+        "diff": 630
+      },
+      {
+        "filename": "static/css/10.699c4858.chunk.css",
+        "previous": 0,
+        "size": 630,
+        "diff": 630
+      }
+    ]
+  },
+  {
+    "timestamp": 1565625472485,
+    "files": [
+      {
+        "filename": "static/css/main.e9ce84a7.chunk.css",
+        "previous": 0,
+        "size": 236,
+        "diff": 236
+      },
+      {
+        "filename": "static/js/main.********.chunk.js",
+        "previous": 0,
+        "size": 3671,
+        "diff": 3671
+      },
+      {
+        "filename": "static/js/runtime~main.********.js",
+        "previous": 0,
+        "size": 1577,
+        "diff": 1577
+      },
+      {
+        "filename": "static/js/2.********.chunk.js",
+        "previous": 0,
+        "size": 7322,
+        "diff": 7322
+      },
+      {
+        "filename": "static/js/3.********.chunk.js",
+        "previous": 0,
+        "size": 46988,
+        "diff": 46988
+      },
+      {
+        "filename": "static/css/4.5c02d70c.chunk.css",
+        "previous": 0,
+        "size": 922,
+        "diff": 922
+      },
+      {
+        "filename": "static/js/4.********.chunk.js",
+        "previous": 0,
+        "size": 3299,
+        "diff": 3299
+      },
+      {
+        "filename": "static/js/5.********.chunk.js",
+        "previous": 0,
+        "size": 16516,
+        "diff": 16516
+      },
+      {
+        "filename": "static/css/6.9a287f55.chunk.css",
+        "previous": 0,
+        "size": 999,
+        "diff": 999
+      },
+      {
+        "filename": "static/js/6.********.chunk.js",
+        "previous": 0,
+        "size": 2512,
+        "diff": 2512
+      },
+      {
+        "filename": "static/css/7.bc68f5aa.chunk.css",
+        "previous": 0,
+        "size": 727,
+        "diff": 727
+      },
+      {
+        "filename": "static/js/7.********.chunk.js",
+        "previous": 0,
+        "size": 4220,
+        "diff": 4220
+      },
+      {
+        "filename": "static/css/8.9ac76b08.chunk.css",
+        "previous": 0,
+        "size": 617,
+        "diff": 617
+      },
+      {
+        "filename": "static/js/8.********.chunk.js",
+        "previous": 0,
+        "size": 4422,
+        "diff": 4422
+      },
+      {
+        "filename": "static/css/9.6c9b6cc4.chunk.css",
+        "previous": 0,
+        "size": 629,
+        "diff": 629
+      },
+      {
+        "filename": "static/js/9.********.chunk.js",
+        "previous": 0,
+        "size": 1626,
+        "diff": 1626
+      },
+      {
+        "filename": "static/css/10.6c9b6cc4.chunk.css",
+        "previous": 0,
+        "size": 630,
+        "diff": 630
+      },
+      {
+        "filename": "static/js/10.********.chunk.js",
+        "previous": 0,
+        "size": 1030,
+        "diff": 1030
+      },
+      {
+        "filename": "static/js/11.********.chunk.js",
+        "previous": 0,
+        "size": 4423,
+        "diff": 4423
+      }
+    ]
+  }
+]
