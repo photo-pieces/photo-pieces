@@ -63,7 +63,7 @@
     "react-ga": "^2.6.0",
     "react-router-dom": "^5.0.1",
     "resolve": "1.10.0",
-    "sass-loader": "7.1.0",
+    "sass-loader": "7.3.1",
     "semver": "6.0.0",
     "size-plugin": "kuldeepkeshwar/size-plugin#develop",
     "style-loader": "0.23.1",
