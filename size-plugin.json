@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": 1574352847673,
+    "timestamp": 1574353024395,
     "files": [
       {
         "filename": "static/css/main.e9ce84a7.chunk.css",
@@ -17,8 +17,8 @@
       {
         "filename": "static/js/runtime~main.********.js",
         "previous": 1577,
-        "size": 1584,
-        "diff": 7
+        "size": 1581,
+        "diff": 4
       },
       {
         "filename": "static/js/2.********.chunk.js",
@@ -117,46 +117,46 @@
         "diff": 9
       },
       {
-        "filename": "static/css/main.8d963b76.chunk.css",
+        "filename": "static/css/main.e3ebfd9c.chunk.css",
         "previous": 0,
-        "size": 237,
-        "diff": 237
+        "size": 234,
+        "diff": 234
       },
       {
-        "filename": "static/css/4.8acb1c39.chunk.css",
+        "filename": "static/css/4.e29c93a0.chunk.css",
         "previous": 0,
         "size": 922,
         "diff": 922
       },
       {
-        "filename": "static/css/6.0d577bb6.chunk.css",
+        "filename": "static/css/6.d9881176.chunk.css",
         "previous": 0,
-        "size": 998,
-        "diff": 998
+        "size": 999,
+        "diff": 999
       },
       {
-        "filename": "static/css/7.4fcc0988.chunk.css",
+        "filename": "static/css/7.9003166f.chunk.css",
         "previous": 0,
         "size": 728,
         "diff": 728
       },
       {
-        "filename": "static/css/8.0321c0c3.chunk.css",
+        "filename": "static/css/8.bd2ce97d.chunk.css",
         "previous": 0,
         "size": 617,
         "diff": 617
       },
       {
-        "filename": "static/css/9.699c4858.chunk.css",
+        "filename": "static/css/9.0b04505c.chunk.css",
         "previous": 0,
-        "size": 630,
-        "diff": 630
+        "size": 629,
+        "diff": 629
       },
       {
-        "filename": "static/css/10.699c4858.chunk.css",
+        "filename": "static/css/10.0b04505c.chunk.css",
         "previous": 0,
-        "size": 630,
-        "diff": 630
+        "size": 629,
+        "diff": 629
       }
     ]
   },
