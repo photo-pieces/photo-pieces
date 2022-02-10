@@ -103,7 +103,7 @@
     "execa": "^2.0.3",
     "git-branch-is": "^3.0.0",
     "husky": "^3.0.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "release-it": "^12.3.4"
   },
   "jest": {
