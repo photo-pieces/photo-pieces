@@ -39,7 +39,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://in.linkedin.com/in/kuldeepkeshwar"><img src="https://avatars1.githubusercontent.com/u/10448534?v=4" width="100px;" alt="anotherjsguy"/><br /><sub><b>anotherjsguy</b></sub></a><br /><a href="https://github.com/photo-pieces/photo-pieces/commits?author=kuldeepkeshwar" title="Code">💻</a> <a href="#design-kuldeepkeshwar" title="Design">🎨</a> <a href="#review-kuldeepkeshwar" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="http://www.nikkk.me"><img src="https://avatars1.githubusercontent.com/u/5371839?v=4" width="100px;" alt="Nitish tyagi"/><br /><sub><b>Nitish tyagi</b></sub></a><br /><a href="#design-NitishTyagi" title="Design">🎨</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/nitishtyagi/"><img src="https://avatars1.githubusercontent.com/u/5371839?v=4" width="100px;" alt="Nitish tyagi"/><br /><sub><b>Nitish tyagi</b></sub></a><br /><a href="#design-NitishTyagi" title="Design">🎨</a></td>
   </tr>
 </table>
 
